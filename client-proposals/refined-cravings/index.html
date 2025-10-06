@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refined Cravings - Premium Charcuterie Boards & Grazing Tables in Southern California</title>
+    <meta name="description" content="Premium charcuterie boards and grazing tables for weddings, corporate events, and special occasions. Serving Inland Empire, Orange County, and Los Angeles since 2016.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <style>
+        /* Custom branding for Refined Cravings */
+        :root {
+            --primary-color: #8B4513;     /* Rich brown/wood color */
+            --primary-dark: #654321;
+            --primary-light: #CD853F;
+            --secondary-color: #DAA520;    /* Elegant gold */
+            --accent-color: #228B22;      /* Fresh herb green */
+            --cream: #FFF8DC;             /* Warm cream background */
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-primary: 'Inter', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+        }
+        
+        /* Enhanced hero section */
+        .hero {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9), rgba(101, 67, 33, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f4f4f4"/><circle cx="50" cy="50" r="30" fill="%23e8e8e8"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 8rem 0 6rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        /* Service cards with elegant styling */
+        .service-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(139, 69, 19, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-starting {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Portfolio gallery */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-image {
+            height: 250px;
+            background: linear-gradient(45deg, var(--cream), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .portfolio-caption {
+            padding: 1.5rem;
+            background: var(--white);
+        }
+        
+        .portfolio-caption h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Testimonials with elegant design */
+        .testimonial {
+            background: var(--cream);
+            border-left: 6px solid var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 0 1rem 1rem 0;
+        }
+        
+        .testimonial-stars {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Contact section with booking focus */
+        .contact-highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact-highlight h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-gold {
+            background: var(--secondary-color);
+            color: var(--gray-800);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
+        }
+        
+        /* Footer with rich background */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-300);
+            padding: 3rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section a {
+            color: var(--gray-300);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Enhanced navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(139, 69, 19, 0.1);
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0 4rem;
+                text-align: center;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodEstablishment",
+      "name": "Refined Cravings",
+      "description": "Premium charcuterie boards and grazing tables for weddings, corporate events, and special occasions in Southern California.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Redlands",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "telephone": "(951) 444-8643",
+      "email": "Grazebyrefinedcravings@outlook.com",
+      "url": "https://refinedcravings.netlify.app",
+      "foundingDate": "2016",
+      "servesCuisine": "Charcuterie",
+      "areaServed": ["Inland Empire", "Orange County", "Los Angeles County"],
+      "sameAs": "https://www.instagram.com/refined_cravings/"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    🧀 Refined Cravings
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Gallery</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Book Now</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="text-center">
+                <h1>Premium Charcuterie & Grazing Tables</h1>
+                <p class="hero-tagline">Artfully crafted for your most memorable moments</p>
+                <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Serving Southern California since 2016 with exquisite charcuterie boards, elegant grazing tables, 
+                    and bespoke catering that transforms your events into unforgettable experiences.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-gold btn-lg">Book Your Event</a>
+                    <a href="tel:9514448643" class="btn btn-secondary btn-lg">Call (951) 444-8643</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div data-aos="fade-right">
+                    <h2>Refined Cravings Story</h2>
+                    <p style="font-size: 1.1rem; color: var(--gray-700); margin-bottom: 2rem;">
+                        Since 2016, we've been elevating events across the Inland Empire, Orange County, 
+                        and Los Angeles with our signature approach to charcuterie artistry.
+                    </p>
+                    
+                    <p>Our journey began with a passion for bringing people together over beautifully 
+                    crafted food experiences. What started as intimate gatherings has grown into a 
+                    premier catering service trusted by couples, corporations, and event planners 
+                    throughout Southern California.</p>
+                    
+                    <p>In 2020, we expanded our offerings to include contactless delivery and 
+                    "board-to-door" services, ensuring that exceptional taste and presentation 
+                    remain accessible for every occasion.</p>
+                    
+                    <div class="stats" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; text-align: center;">
+                        <div style="padding: 1.5rem; background: var(--cream); border-radius: 1rem;">
+                            <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">8+</h3>
+                            <p style="color: var(--gray-600); font-weight: 500;">Years Experience</p>
+                        </div>
+                        <div style="padding: 1.5rem; background: var(--cream); border-radius: 1rem;">
+                            <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">1000+</h3>
+                            <p style="color: var(--gray-600); font-weight: 500;">Events Catered</p>
+                        </div>
+                        <div style="padding: 1.5rem; background: var(--cream); border-radius: 1rem;">
+                            <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">3</h3>
+                            <p style="color: var(--gray-600); font-weight: 500;">Counties Served</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="portfolio-image" style="height: 400px; border-radius: 1rem;">
+                        🧀🍇🥖<br><span style="font-size: 1rem; opacity: 0.7;">Artisanal Craftsmanship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Our Premium Services</h2>
+                <p style="font-size: 1.2rem; color: var(--gray-600); max-width: 600px; margin: 0 auto;">
+                    From intimate gatherings to grand celebrations, we create memorable experiences 
+                    that bring people together over exceptional food.
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">🏢</div>
+                    <h3>Corporate Events</h3>
+                    <p>Elevate your business gatherings, client meetings, and corporate celebrations with 
+                    our professional catering services. Perfect for office parties, board meetings, 
+                    and company milestones.</p>
+                    <div class="service-starting">Starting at $150</div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="service-icon">💒</div>
+                    <h3>Wedding Grazing Tables</h3>
+                    <p>Create stunning focal points for your special day with our elegant grazing tables. 
+                    Beautifully designed spreads that encourage mingling and celebration between 
+                    ceremony and reception.</p>
+                    <div class="service-starting">Starting at $300</div>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" style="animation-delay: 0.2s;">
+                    <div class="service-icon">🚚</div>
+                    <h3>Contactless Delivery</h3>
+                    <p>Enjoy our premium charcuterie boards delivered directly to your home or office. 
+                    Perfect for intimate celebrations, date nights, or whenever you want to treat 
+                    yourself to something special.</p>
+                    <div class="service-starting">Starting at $75</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="btn btn-primary btn-lg">Get Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Recent Creations</h2>
+                <p style="color: var(--gray-600);">A glimpse into our artfully crafted charcuterie experiences</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="fade-up">
+                    <div class="portfolio-image">🧀🍯</div>
+                    <div class="portfolio-caption">
+                        <h4>Wedding Grazing Table</h4>
+                        <p>Elegant 12-foot grazing table for 150 guests featuring artisanal cheeses, 
+                        seasonal fruits, and gourmet accompaniments.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="portfolio-image">🥖🍷</div>
+                    <div class="portfolio-caption">
+                        <h4>Corporate Board Meeting</h4>
+                        <p>Professional presentation boxes for executive meeting featuring premium 
+                        selections and sophisticated styling.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-aos="fade-up" style="animation-delay: 0.2s;">
+                    <div class="portfolio-image">🎃🕷️</div>
+                    <div class="portfolio-caption">
+                        <h4>Seasonal Workshop</h4>
+                        <p>Día de los Muertos themed charcuterie class featuring festive ingredients 
+                        and cultural celebration elements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>What Our Clients Say</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="testimonial" data-aos="fade-up">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Refined Cravings made our wedding reception absolutely magical! The grazing table 
+                        was not only gorgeous but delicious. Our guests couldn't stop talking about it. 
+                        Professional, creative, and worth every penny!"
+                    </p>
+                    <div class="testimonial-author">— Sarah & Michael, Newport Beach Wedding</div>
+                </div>
+                
+                <div class="testimonial" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We use Refined Cravings for all our corporate events now. They're reliable, 
+                        professional, and the presentation is always stunning. Our clients are impressed 
+                        every time, and that reflects well on our business."
+                    </p>
+                    <div class="testimonial-author">— Jennifer Martinez, Event Coordinator</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Highlight -->
+    <section class="contact-highlight">
+        <div class="container">
+            <h2>Ready to Refine Your Next Event?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 0;">
+                Let's create something beautiful together. Contact us for a personalized consultation 
+                and custom quote for your upcoming celebration.
+            </p>
+            <div class="contact-buttons">
+                <a href="tel:9514448643" class="btn-gold">Call (951) 444-8643</a>
+                <a href="mailto:Grazebyrefinedcravings@outlook.com" class="btn-gold">Send Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Get Your Custom Quote</h3>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Service Areas</h4>
+                        <p>🏢 <strong>Inland Empire</strong><br>
+                        🌴 <strong>Orange County</strong><br>
+                        🌆 <strong>Los Angeles County</strong></p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Contact Information</h4>
+                        <p>📍 <strong>Based in Redlands, CA</strong></p>
+                        <p>📞 <strong>Phone:</strong> <a href="tel:9514448643">(951) 444-8643</a></p>
+                        <p>✉️ <strong>Email:</strong> <a href="mailto:Grazebyrefinedcravings@outlook.com">Grazebyrefinedcravings@outlook.com</a></p>
+                        <p>📱 <strong>Instagram:</strong> <a href="https://www.instagram.com/refined_cravings/" target="_blank">@refined_cravings</a></p>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Response Time</h4>
+                        <p>We typically respond to inquiries within 24 hours. For urgent requests, 
+                        please call us directly.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contact-form" name="event-inquiry" method="POST" netlify>
+                        <input type="hidden" name="form-name" value="event-inquiry">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-type" class="form-label">Event Type *</label>
+                            <select id="event-type" name="event-type" class="form-input" required>
+                                <option value="">Select event type</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Corporate Event">Corporate Event</option>
+                                <option value="Birthday Party">Birthday Party</option>
+                                <option value="Holiday Party">Holiday Party</option>
+                                <option value="Delivery Order">Delivery Order</option>
+                                <option value="Charcuterie Class">Charcuterie Class</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-date" class="form-label">Event Date</label>
+                            <input type="date" id="event-date" name="event-date" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guest-count" class="form-label">Expected Guest Count</label>
+                            <select id="guest-count" name="guest-count" class="form-input">
+                                <option value="">Select guest count</option>
+                                <option value="2-10">2-10 guests</option>
+                                <option value="11-25">11-25 guests</option>
+                                <option value="26-50">26-50 guests</option>
+                                <option value="51-100">51-100 guests</option>
+                                <option value="100+">100+ guests</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget" class="form-label">Budget Range</label>
+                            <select id="budget" name="budget" class="form-input">
+                                <option value="">Select budget range</option>
+                                <option value="$75-150">$75-150</option>
+                                <option value="$150-300">$150-300</option>
+                                <option value="$300-500">$300-500</option>
+                                <option value="$500-1000">$500-1000</option>
+                                <option value="$1000+">$1000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Event Details & Special Requests</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" 
+                            placeholder="Tell us about your vision, dietary restrictions, theme, location, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            Request Custom Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Refined Cravings</h3>
+                    <p style="color: var(--gray-400); margin-bottom: 1.5rem;">
+                        Elevating events with premium charcuterie and grazing tables since 2016.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://www.instagram.com/refined_cravings/" target="_blank">📱 Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">Wedding Grazing Tables</a>
+                    <a href="#services">Corporate Events</a>
+                    <a href="#services">Contactless Delivery</a>
+                    <a href="#services">Charcuterie Classes</a>
+                    <a href="#services">Custom Events</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="tel:9514448643">(951) 444-8643</a>
+                    <a href="mailto:Grazebyrefinedcravings@outlook.com">Grazebyrefinedcravings@outlook.com</a>
+                    <p style="color: var(--gray-400); margin-top: 1rem;">
+                        Serving Inland Empire, Orange County & Los Angeles County
+                    </p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--gray-700); padding-top: 2rem; text-align: center;">
+                <p>&copy; 2024 Refined Cravings. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; color: var(--gray-400);">
+                    Website redesigned by <a href="#" style="color: var(--secondary-color);">Your Web Design Business</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

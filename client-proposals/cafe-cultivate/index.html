@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Cultivate - Farm-to-Cup Coffee & Fresh Eats | Now Open in Redlands, CA</title>
+    <meta name="description" content="Discover Cafe Cultivate - your new neighborhood coffee shop featuring specialty coffee, fresh pastries, and farm-to-table light meals. Now open in Redlands, California.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <style>
+        /* Custom branding for Cafe Cultivate */
+        :root {
+            --primary-color: #2F5233;      /* Forest green */
+            --primary-dark: #1a3d1f;
+            --primary-light: #4a7c59;
+            --secondary-color: #D4A574;    /* Warm coffee brown */
+            --accent-color: #E8B86D;       /* Golden yellow */
+            --cream: #F7F3E9;              /* Warm cream */
+            --coffee-dark: #3C2415;        /* Dark coffee brown */
+            
+            /* Typography */
+            --font-heading: 'Dancing Script', cursive;
+            --font-primary: 'Poppins', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--cream);
+        }
+        
+        h1, h2 {
+            font-family: var(--font-heading);
+        }
+        
+        h3, h4, h5, h6 {
+            font-family: var(--font-primary);
+            font-weight: 600;
+        }
+        
+        /* Enhanced hero section with coffee shop vibe */
+        .hero {
+            background: linear-gradient(135deg, rgba(47, 82, 51, 0.9), rgba(26, 61, 31, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f7f3e9"/><circle cx="30" cy="30" r="15" fill="%23d4a574"/><circle cx="70" cy="70" r="20" fill="%23e8b86d"/></svg>');
+            background-size: cover;
+            color: var(--white);
+            padding: 8rem 0 6rem;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-tagline {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .grand-opening-banner {
+            background: var(--accent-color);
+            color: var(--coffee-dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(232, 184, 109, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Menu section styling */
+        .menu-section {
+            background: var(--white);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+        
+        .menu-category h3 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .menu-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .menu-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-info h4 {
+            color: var(--coffee-dark);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .menu-description {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .menu-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* Cafe atmosphere cards */
+        .atmosphere-card {
+            background: var(--white);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(47, 82, 51, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--secondary-color);
+            height: 100%;
+        }
+        
+        .atmosphere-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(47, 82, 51, 0.15);
+        }
+        
+        .atmosphere-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        /* Hours and contact styling */
+        .hours-card, .contact-card {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hours-card h3, .contact-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Instagram feed styling */
+        .instagram-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .instagram-post {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-post:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Call-to-action styling */
+        .cta-section {
+            background: linear-gradient(135deg, var(--coffee-dark), var(--primary-dark));
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+            margin: 4rem 0 0;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-coffee {
+            background: var(--accent-color);
+            color: var(--coffee-dark);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 184, 109, 0.3);
+        }
+        
+        .btn-coffee:hover {
+            background: #FFD700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 184, 109, 0.4);
+        }
+        
+        /* Navigation styling */
+        .navbar {
+            background: rgba(247, 243, 233, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(47, 82, 51, 0.1);
+        }
+        
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-links a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Footer styling */
+        .footer {
+            background: var(--coffee-dark);
+            color: var(--cream);
+        }
+        
+        .footer-section h3 {
+            color: var(--accent-color);
+        }
+        
+        .footer-section a {
+            color: var(--cream);
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0 4rem;
+                text-align: center;
+            }
+            
+            .menu-section {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu-price {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    
+    <!-- Schema.org markup for local cafe -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Cafe Cultivate",
+      "description": "Farm-to-cup coffee shop featuring specialty coffee, fresh pastries, and farm-to-table light meals in Redlands, California.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Redlands",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "telephone": "(951) 444-8643",
+      "url": "https://cafecultivate.netlify.app",
+      "openingDate": "2025-10-01",
+      "servesCuisine": ["Coffee", "Breakfast", "Light Meals"],
+      "priceRange": "$$",
+      "sameAs": "https://www.instagram.com/cafe_cultivate_/"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    ☕ Cafe Cultivate
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#location">Visit Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="grand-opening-banner">
+                    🎉 GRAND OPENING - NOW OPEN! 🎉
+                </div>
+                <h1>Cafe Cultivate</h1>
+                <p class="hero-tagline">Farm-to-Cup Coffee & Fresh Eats</p>
+                <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Your new neighborhood coffee shop featuring specialty coffee, locally-sourced ingredients, 
+                    and a warm community atmosphere. Come experience the difference quality makes.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn-coffee btn-lg">See Our Menu</a>
+                    <a href="#location" class="btn btn-secondary btn-lg">Visit Us Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Welcome to Cafe Cultivate</h2>
+                <p style="font-size: 1.2rem; color: var(--gray-600); max-width: 700px; margin: 0 auto;">
+                    Where community, quality, and sustainability come together over exceptional coffee
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="atmosphere-card" data-aos="fade-up">
+                    <div class="atmosphere-icon">🌱</div>
+                    <h3>Farm-to-Cup</h3>
+                    <p>We source our coffee beans directly from sustainable farms, ensuring every cup 
+                    supports both exceptional flavor and ethical farming practices.</p>
+                </div>
+                
+                <div class="atmosphere-card" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="atmosphere-icon">🥐</div>
+                    <h3>Fresh Daily</h3>
+                    <p>Our pastries, sandwiches, and light meals are made fresh daily using locally-sourced 
+                    ingredients whenever possible.</p>
+                </div>
+                
+                <div class="atmosphere-card" data-aos="fade-up" style="animation-delay: 0.2s;">
+                    <div class="atmosphere-icon">🤝</div>
+                    <h3>Community Hub</h3>
+                    <p>More than just a coffee shop - we're a gathering place for neighbors, remote workers, 
+                    students, and anyone seeking connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Our Menu</h2>
+                <p style="color: var(--gray-600);">Crafted with care, served with love</p>
+            </div>
+            
+            <div class="menu-section">
+                <!-- Coffee & Espresso -->
+                <div class="menu-category">
+                    <h3>☕ Coffee & Espresso</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>House Blend Drip Coffee</h4>
+                                <p class="menu-description">Our signature medium roast blend with notes of chocolate and caramel</p>
+                            </div>
+                            <div class="menu-price">$3.50</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Espresso / Americano</h4>
+                                <p class="menu-description">Rich, bold espresso shot or diluted American-style</p>
+                            </div>
+                            <div class="menu-price">$2.75 / $3.25</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Cappuccino / Latte</h4>
+                                <p class="menu-description">Perfect balance of espresso and steamed milk</p>
+                            </div>
+                            <div class="menu-price">$4.25 / $4.75</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Cultivate Special</h4>
+                                <p class="menu-description">Honey lavender latte with locally-sourced honey</p>
+                            </div>
+                            <div class="menu-price">$5.25</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food & Pastries -->
+                <div class="menu-category">
+                    <h3>🥐 Fresh Eats</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Avocado Toast</h4>
+                                <p class="menu-description">Fresh avocado, heirloom tomatoes, microgreens on artisan sourdough</p>
+                            </div>
+                            <div class="menu-price">$8.50</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Breakfast Sandwich</h4>
+                                <p class="menu-description">Farm eggs, local cheese, choice of bacon or sausage on brioche</p>
+                            </div>
+                            <div class="menu-price">$9.25</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Daily Pastry Selection</h4>
+                                <p class="menu-description">Fresh croissants, muffins, and seasonal specialties baked daily</p>
+                            </div>
+                            <div class="menu-price">$3.50 - $5.00</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Seasonal Salad</h4>
+                                <p class="menu-description">Mixed greens, seasonal vegetables, house-made vinaigrette</p>
+                            </div>
+                            <div class="menu-price">$7.75</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold Drinks -->
+                <div class="menu-category">
+                    <h3>🧊 Cold Beverages</h3>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Cold Brew Coffee</h4>
+                                <p class="menu-description">Smooth, concentrated coffee steeped for 16 hours</p>
+                            </div>
+                            <div class="menu-price">$4.25</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Iced Latte / Mocha</h4>
+                                <p class="menu-description">Refreshing espresso drinks served over ice</p>
+                            </div>
+                            <div class="menu-price">$4.75 / $5.25</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-info">
+                                <h4>Fresh Fruit Smoothies</h4>
+                                <p class="menu-description">Seasonal fruit blends with optional protein boost</p>
+                            </div>
+                            <div class="menu-price">$6.50</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section id="location" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Visit Our New Location</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="hours-card" data-aos="fade-right">
+                    <h3>📍 Find Us</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                        <strong>Coming Soon - Address TBD</strong><br>
+                        Redlands, CA
+                    </p>
+                    
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Grand Opening Hours:</h4>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday</span><span>6:00 AM - 7:00 PM</span></li>
+                        <li><span>Saturday</span><span>7:00 AM - 8:00 PM</span></li>
+                        <li><span>Sunday</span><span>7:00 AM - 6:00 PM</span></li>
+                    </ul>
+                    
+                    <p style="margin-top: 2rem; font-style: italic; opacity: 0.9;">
+                        *Hours may vary during grand opening week. Follow us on Instagram for updates!
+                    </p>
+                </div>
+                
+                <div class="contact-card" data-aos="fade-left">
+                    <h3>☕ Get In Touch</h3>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent-color);">Phone</h4>
+                        <p><a href="tel:9514448643" style="color: var(--white);">(951) 444-8643</a></p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent-color);">Follow Us</h4>
+                        <p><a href="https://www.instagram.com/cafe_cultivate_/" target="_blank" style="color: var(--white);">@cafe_cultivate_</a></p>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: var(--accent-color);">Catering & Events</h4>
+                        <p>Ask about coffee catering for your next meeting or event!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2>Follow Our Journey</h2>
+                <p style="color: var(--gray-600);">
+                    <a href="https://www.instagram.com/cafe_cultivate_/" target="_blank" style="color: var(--primary-color); font-weight: 600;">
+                        @cafe_cultivate_
+                    </a>
+                </p>
+            </div>
+            
+            <div class="instagram-feed">
+                <div class="instagram-post">☕📸</div>
+                <div class="instagram-post">🥐✨</div>
+                <div class="instagram-post">🌱💚</div>
+                <div class="instagram-post">👥🤝</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: var(--white); font-size: 2.5rem;">Ready to Cultivate Your Day?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 0;">
+                Join us for exceptional coffee, fresh food, and warm community. 
+                Your new favorite neighborhood spot awaits!
+            </p>
+            <div class="cta-buttons">
+                <a href="tel:9514448643" class="btn-coffee">Call (951) 444-8643</a>
+                <a href="https://www.instagram.com/cafe_cultivate_/" target="_blank" class="btn-coffee">Follow on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Get Updates & Ask Questions</h2>
+                <p style="color: var(--gray-600);">Stay in the loop about our grand opening and special events</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div data-aos="fade-right">
+                    <h3>Questions About Our Opening?</h3>
+                    <p>We're excited to share our journey with the community! Whether you're curious about 
+                    our menu, want to know about catering services, or just want to say hello, we'd love to hear from you.</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <h4>What to Expect:</h4>
+                        <ul style="color: var(--gray-600); line-height: 1.8;">
+                            <li>✓ Specialty coffee from sustainable farms</li>
+                            <li>✓ Fresh pastries and light meals made daily</li>
+                            <li>✓ Cozy atmosphere perfect for work or relaxation</li>
+                            <li>✓ Community events and coffee education</li>
+                            <li>✓ Coffee catering available</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <form id="contact-form" name="cafe-inquiry" method="POST" netlify>
+                        <input type="hidden" name="form-name" value="cafe-inquiry">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest" class="form-label">I'm interested in:</label>
+                            <select id="interest" name="interest" class="form-input">
+                                <option value="">Select an option</option>
+                                <option value="Grand Opening Updates">Grand Opening Updates</option>
+                                <option value="Catering Services">Catering Services</option>
+                                <option value="Private Events">Private Events</option>
+                                <option value="Coffee Education">Coffee Education/Classes</option>
+                                <option value="General Questions">General Questions</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" 
+                            placeholder="Let us know what you're excited about or any questions you have!"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section-sm">
+        <div class="container">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 2rem;">
+                <div class="footer-section">
+                    <h3>Cafe Cultivate</h3>
+                    <p style="color: var(--gray-400); margin-bottom: 1.5rem;">
+                        Farm-to-cup coffee and fresh eats in the heart of Redlands. 
+                        Cultivating community, one cup at a time.
+                    </p>
+                    <div>
+                        <a href="https://www.instagram.com/cafe_cultivate_/" target="_blank">📱 Follow on Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#menu">Menu</a>
+                    <a href="#about">About Us</a>
+                    <a href="#location">Location & Hours</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="tel:9514448643">(951) 444-8643</a>
+                    <p style="color: var(--gray-400); margin-top: 1rem;">
+                        Address coming soon!<br>
+                        Redlands, CA
+                    </p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--gray-700); padding-top: 2rem; text-align: center;">
+                <p>&copy; 2025 Cafe Cultivate. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; color: var(--gray-400);">
+                    Website by <a href="#" style="color: var(--accent-color);">Your Web Design Business</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

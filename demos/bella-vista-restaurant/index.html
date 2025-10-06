@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Vista Italian Restaurant - Authentic Italian Cuisine in Downtown Seattle</title>
+    <meta name="description" content="Experience authentic Italian cuisine at Bella Vista, Seattle's premier Italian restaurant. Fresh pasta, wood-fired pizzas, and fine wines in a cozy atmosphere.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <style>
+        /* Custom colors for Bella Vista */
+        :root {
+            --primary-color: #8b0000;
+            --primary-dark: #660000;
+            --primary-light: #cc3333;
+            --secondary-color: #ffd700;
+            --accent-color: #228b22;
+        }
+        
+        .service-price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: var(--space-3);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: var(--space-4);
+            background: var(--gray-50);
+            border-radius: 0.5rem;
+        }
+        
+        .stat-item h3 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: var(--space-2);
+        }
+        
+        .testimonial .stars {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: var(--space-3);
+        }
+        
+        .testimonial-author {
+            margin-top: var(--space-4);
+            padding-top: var(--space-3);
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .testimonial-author strong {
+            display: block;
+            color: var(--primary-color);
+        }
+        
+        .contact-item {
+            margin-bottom: var(--space-6);
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: var(--space-2);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: var(--space-8);
+            justify-content: center;
+            margin: var(--space-6) 0;
+        }
+        
+        .footer-links a {
+            color: var(--gray-300);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-6);
+            justify-content: center;
+            margin: var(--space-6) 0;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--gray-600);
+            padding-top: var(--space-6);
+            margin-top: var(--space-6);
+        }
+    </style>
+    
+    <!-- Schema.org markup for local business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Bella Vista Italian Restaurant",
+      "description": "Authentic Italian cuisine with fresh pasta, wood-fired pizzas, and fine wines in a cozy downtown Seattle atmosphere.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1234 Pine Street",
+        "addressLocality": "Seattle",
+        "addressRegion": "WA",
+        "postalCode": "98101"
+      },
+      "telephone": "(206) 555-0123",
+      "url": "https://bellavista-demo.netlify.app",
+      "openingHours": ["Mo-Th 17:00-22:00", "Fr-Sa 17:00-23:00", "Su 17:00-21:00"],
+      "priceRange": "$$",
+      "servesCuisine": "Italian",
+      "acceptsReservations": true
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2 style="color: var(--primary-color); margin: 0;">🍝 Bella Vista</h2>
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1>Authentic Italian Cuisine in the Heart of Seattle</h1>
+                    <p>Experience the flavors of Italy with our handcrafted pasta, wood-fired pizzas, and carefully selected wines. Family recipes passed down through generations, served in a warm and inviting atmosphere.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary btn-lg">Make Reservation</a>
+                        <a href="tel:2065550123" class="btn btn-secondary btn-lg">Call Now</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #8b0000, #cc3333); border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        🍝🍷
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div data-aos="fade-right">
+                    <h2>About Bella Vista</h2>
+                    <p>Since 1995, Bella Vista has been bringing authentic Italian flavors to Seattle. Our family recipes, passed down through four generations, celebrate the rich culinary traditions of Tuscany and Sicily.</p>
+                    <p>Chef Marco Rossini leads our kitchen with over 20 years of experience, using only the finest imported ingredients alongside fresh local produce. Every dish is prepared with passion and attention to detail.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>25+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div style="width: 100%; height: 300px; background: linear-gradient(45deg, #f4f4f4, #e8e8e8); border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                        👨‍🍳 Chef at Work
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section" style="background-color: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Our Signature Dishes</h2>
+                <p>From traditional favorites to chef specials, every dish tells a story of Italian culinary heritage.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 0 auto var(--space-4);">🍝</div>
+                    </div>
+                    <h3>Handmade Pasta</h3>
+                    <p>Fresh pasta made daily with imported Italian flour. Try our signature Linguine alle Vongole or classic Fettuccine Alfredo.</p>
+                    <div class="service-price">Starting at $18</div>
+                </div>
+                
+                <div class="card" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="service-icon">
+                        <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 0 auto var(--space-4);">🍕</div>
+                    </div>
+                    <h3>Wood-Fired Pizza</h3>
+                    <p>Authentic Neapolitan-style pizzas baked in our wood-fired oven. Crispy crust, fresh mozzarella, and premium toppings.</p>
+                    <div class="service-price">Starting at $16</div>
+                </div>
+                
+                <div class="card" data-aos="fade-up" style="animation-delay: 0.2s;">
+                    <div class="service-icon">
+                        <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; margin: 0 auto var(--space-4);">🍷</div>
+                    </div>
+                    <h3>Wine Selection</h3>
+                    <p>Carefully curated Italian wines from renowned regions. Our sommelier will help pair the perfect wine with your meal.</p>
+                    <div class="service-price">Starting at $12</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>What Our Guests Say</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="testimonial card" data-aos="fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p>"The most authentic Italian food I've had outside of Italy! The pasta is incredible and the atmosphere is perfect for date night. Chef Marco personally came to our table - what a treat!"</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <span>Regular Customer</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial card" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="stars">★★★★★</div>
+                    <p>"Bella Vista catered our wedding and it was absolutely perfect. The food was outstanding and the service was impeccable. All our guests are still talking about it!"</p>
+                    <div class="testimonial-author">
+                        <strong>Michael & Lisa Chen</strong>
+                        <span>Wedding Customers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background-color: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Visit Us Today</h2>
+                <p>Make a reservation or stop by for an unforgettable Italian dining experience.</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Restaurant Information</h3>
+                    
+                    <div class="contact-item">
+                        <strong>Address:</strong>
+                        <p>1234 Pine Street<br>Seattle, WA 98101</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <p><a href="tel:2065550123">(206) 555-0123</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <p><a href="mailto:info@bellavista-seattle.com">info@bellavista-seattle.com</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Hours:</strong>
+                        <p>Monday - Thursday: 5:00 PM - 10:00 PM<br>
+                           Friday - Saturday: 5:00 PM - 11:00 PM<br>
+                           Sunday: 5:00 PM - 9:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contact-form" name="reservation" method="POST" netlify>
+                        <input type="hidden" name="form-name" value="reservation">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="party-size" class="form-label">Party Size</label>
+                            <select id="party-size" name="party-size" class="form-input">
+                                <option value="">Select party size</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6+">6+ people</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date" class="form-label">Preferred Date</label>
+                            <input type="date" id="date" name="date" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Special Requests</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-sm" style="background-color: var(--gray-800); color: var(--white);">
+        <div class="container text-center">
+            <div class="footer-content">
+                <h3>Bella Vista Italian Restaurant</h3>
+                <p>Bringing authentic Italian flavors to Seattle since 1995</p>
+                
+                <div class="footer-links">
+                    <a href="tel:2065550123">(206) 555-0123</a>
+                    <a href="mailto:info@bellavista-seattle.com">info@bellavista-seattle.com</a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener">Facebook</a>
+                    <a href="#" target="_blank" rel="noopener">Instagram</a>
+                    <a href="#" target="_blank" rel="noopener">Google Reviews</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bella Vista Italian Restaurant. All rights reserved.</p>
+                <p>Website by <a href="#" target="_blank">Your Web Design Business</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

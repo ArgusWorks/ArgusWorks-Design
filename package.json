@@ -1,0 +1,33 @@
+{
+  "name": "local-business-netlify-templates",
+  "version": "1.0.0",
+  "description": "Reusable website templates for local business web design services",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "netlify deploy --prod --dir=dist",
+    "deploy:draft": "netlify deploy --dir=dist",
+    "setup:client": "node scripts/setup-client.js",
+    "build:client": "npm run build && echo 'Client site ready for deployment'"
+  },
+  "keywords": [
+    "netlify",
+    "templates",
+    "web-design",
+    "local-business",
+    "small-business"
+  ],
+  "author": "Your Web Design Business",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@netlify/plugin-nextjs": "^4.29.0",
+    "netlify-cli": "^17.0.0"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "swiper": "^11.0.0"
+  }
+}

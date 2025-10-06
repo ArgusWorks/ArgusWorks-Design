@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Business Web Design Templates</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <style>
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .demo-preview {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .demo-info {
+            padding: 1.5rem;
+        }
+        
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+        }
+        
+        .demo-description {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+        
+        .demo-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .demo-links a {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-demo {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-demo:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-code {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+        
+        .btn-code:hover {
+            background: var(--gray-200);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding: 3rem 1rem;">
+        <div class="text-center">
+            <h1>Local Business Web Design Templates</h1>
+            <p style="font-size: 1.2rem; color: var(--gray-600); max-width: 600px; margin: 0 auto;">
+                Professional website templates designed for small businesses. 
+                Built with modern web standards and optimized for Netlify deployment.
+            </p>
+        </div>
+        
+        <div class="demo-grid">
+            <!-- Restaurant Demo -->
+            <div class="demo-card">
+                <div class="demo-preview" style="background: linear-gradient(135deg, #8b0000, #cc3333);">
+                    🍝🍷
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; font-size: 1rem; opacity: 0.9;">
+                        Restaurant
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3 class="demo-title">Bella Vista Italian Restaurant</h3>
+                    <p class="demo-description">
+                        Perfect for restaurants, cafes, and food services. Features menu showcase, 
+                        reservation system, and customer reviews.
+                    </p>
+                    <div class="demo-links">
+                        <a href="demos/bella-vista-restaurant/index.html" class="btn-demo">View Demo</a>
+                        <a href="templates/local-business/README.md" class="btn-code">Documentation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Template Library -->
+            <div class="demo-card">
+                <div class="demo-preview" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    🎨📱
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; font-size: 1rem; opacity: 0.9;">
+                        Base Template
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3 class="demo-title">Local Business Template</h3>
+                    <p class="demo-description">
+                        Customizable template for any local business. Easy to modify colors, 
+                        content, and layout for different industries.
+                    </p>
+                    <div class="demo-links">
+                        <a href="templates/local-business/index.html" class="btn-demo">View Template</a>
+                        <a href="templates/local-business/README.md" class="btn-code">Customize Guide</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Coming Soon -->
+            <div class="demo-card" style="opacity: 0.7;">
+                <div class="demo-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    💼🏢
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; font-size: 1rem; opacity: 0.9;">
+                        Coming Soon
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3 class="demo-title">Professional Services</h3>
+                    <p class="demo-description">
+                        Template for lawyers, accountants, consultants, and other professional 
+                        service providers. Features case studies and appointment booking.
+                    </p>
+                    <div class="demo-links">
+                        <a href="#" class="btn-code">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section text-center">
+            <h2>Getting Started</h2>
+            <div class="grid grid-3" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>📋 1. Choose Template</h3>
+                    <p>Select the template that best fits your client's industry and needs.</p>
+                </div>
+                <div class="card">
+                    <h3>✏️ 2. Customize Content</h3>
+                    <p>Replace placeholder content with client information and branding.</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 3. Deploy to Netlify</h3>
+                    <p>Push to GitHub and connect to Netlify for automatic deployment.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" style="background: var(--gray-50); border-radius: 1rem; padding: 3rem; margin: 3rem 0;">
+            <h2 class="text-center">Business Resources</h2>
+            <div class="grid grid-2" style="margin-top: 2rem;">
+                <div>
+                    <h3>📚 Documentation</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="docs/client-workflow.md">→ Client Workflow Guide</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="docs/getting-clients.md">→ Getting Your First 10 Clients</a>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <a href="templates/local-business/README.md">→ Template Customization</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>🛠️ Development</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <code style="background: var(--gray-200); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">npm install</code>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <code style="background: var(--gray-200); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">npm run dev</code>
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <code style="background: var(--gray-200); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">npm run build</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

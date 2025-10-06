@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BUSINESS_NAME}} - {{BUSINESS_TYPE}} in {{LOCATION}}</title>
+    <meta name="description" content="{{BUSINESS_DESCRIPTION}}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/base.css">
+    
+    <!-- Schema.org markup for local business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{{BUSINESS_NAME}}",
+      "description": "{{BUSINESS_DESCRIPTION}}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{STREET_ADDRESS}}",
+        "addressLocality": "{{CITY}}",
+        "addressRegion": "{{STATE}}",
+        "postalCode": "{{ZIP_CODE}}"
+      },
+      "telephone": "{{PHONE}}",
+      "url": "{{WEBSITE_URL}}",
+      "openingHours": "{{OPENING_HOURS}}",
+      "priceRange": "{{PRICE_RANGE}}"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="/assets/images/logo.svg" alt="{{BUSINESS_NAME}}" height="40">
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <h1>{{HERO_HEADLINE}}</h1>
+                    <p>{{HERO_SUBTEXT}}</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
+                        <a href="tel:{{PHONE_CLEAN}}" class="btn btn-secondary btn-lg">Call Now</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="/assets/images/hero-image.jpg" alt="{{BUSINESS_NAME}} - {{BUSINESS_TYPE}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <div data-aos="fade-right">
+                    <h2>About {{BUSINESS_NAME}}</h2>
+                    <p>{{ABOUT_PARAGRAPH_1}}</p>
+                    <p>{{ABOUT_PARAGRAPH_2}}</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>{{STAT_1_NUMBER}}</h3>
+                            <p>{{STAT_1_LABEL}}</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>{{STAT_2_NUMBER}}</h3>
+                            <p>{{STAT_2_LABEL}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <img src="/assets/images/about-image.jpg" alt="About {{BUSINESS_NAME}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" style="background-color: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Our Services</h2>
+                <p>{{SERVICES_INTRO_TEXT}}</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <img src="/assets/images/service-1-icon.svg" alt="{{SERVICE_1_NAME}}" width="60" height="60">
+                    </div>
+                    <h3>{{SERVICE_1_NAME}}</h3>
+                    <p>{{SERVICE_1_DESCRIPTION}}</p>
+                    <div class="service-price">Starting at ${{SERVICE_1_PRICE}}</div>
+                </div>
+                
+                <div class="card" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="service-icon">
+                        <img src="/assets/images/service-2-icon.svg" alt="{{SERVICE_2_NAME}}" width="60" height="60">
+                    </div>
+                    <h3>{{SERVICE_2_NAME}}</h3>
+                    <p>{{SERVICE_2_DESCRIPTION}}</p>
+                    <div class="service-price">Starting at ${{SERVICE_2_PRICE}}</div>
+                </div>
+                
+                <div class="card" data-aos="fade-up" style="animation-delay: 0.2s;">
+                    <div class="service-icon">
+                        <img src="/assets/images/service-3-icon.svg" alt="{{SERVICE_3_NAME}}" width="60" height="60">
+                    </div>
+                    <h3>{{SERVICE_3_NAME}}</h3>
+                    <p>{{SERVICE_3_DESCRIPTION}}</p>
+                    <div class="service-price">Starting at ${{SERVICE_3_PRICE}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>What Our Customers Say</h2>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="testimonial card" data-aos="fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p>"{{TESTIMONIAL_1_TEXT}}"</p>
+                    <div class="testimonial-author">
+                        <strong>{{TESTIMONIAL_1_NAME}}</strong>
+                        <span>{{TESTIMONIAL_1_TITLE}}</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial card" data-aos="fade-up" style="animation-delay: 0.1s;">
+                    <div class="stars">★★★★★</div>
+                    <p>"{{TESTIMONIAL_2_TEXT}}"</p>
+                    <div class="testimonial-author">
+                        <strong>{{TESTIMONIAL_2_NAME}}</strong>
+                        <span>{{TESTIMONIAL_2_TITLE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="background-color: var(--gray-50);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Get In Touch</h2>
+                <p>{{CONTACT_INTRO_TEXT}}</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <strong>Address:</strong>
+                        <p>{{STREET_ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP_CODE}}</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Phone:</strong>
+                        <p><a href="tel:{{PHONE_CLEAN}}">{{PHONE}}</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <strong>Hours:</strong>
+                        <p>{{BUSINESS_HOURS}}</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form id="contact-form" name="contact" method="POST" netlify>
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select id="service" name="service" class="form-input">
+                                <option value="">Select a service</option>
+                                <option value="{{SERVICE_1_NAME}}">{{SERVICE_1_NAME}}</option>
+                                <option value="{{SERVICE_2_NAME}}">{{SERVICE_2_NAME}}</option>
+                                <option value="{{SERVICE_3_NAME}}">{{SERVICE_3_NAME}}</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-sm" style="background-color: var(--gray-800); color: var(--white);">
+        <div class="container text-center">
+            <div class="footer-content">
+                <h3>{{BUSINESS_NAME}}</h3>
+                <p>{{FOOTER_TAGLINE}}</p>
+                
+                <div class="footer-links">
+                    <a href="tel:{{PHONE_CLEAN}}">{{PHONE}}</a>
+                    <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+                </div>
+                
+                <div class="social-links">
+                    <!-- Add social media links as needed -->
+                    <a href="{{FACEBOOK_URL}}" target="_blank" rel="noopener">Facebook</a>
+                    <a href="{{GOOGLE_BUSINESS_URL}}" target="_blank" rel="noopener">Google</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{BUSINESS_NAME}}. All rights reserved.</p>
+                <p>Website by <a href="{{YOUR_WEBSITE}}" target="_blank">Your Web Design Business</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    
+    <!-- Analytics (add client's tracking code) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+</body>
+</html>
