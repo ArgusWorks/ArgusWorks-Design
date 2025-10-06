@@ -331,6 +331,52 @@
             color: var(--accent-color);
         }
         
+        /* Events Section Styles */
+        .event-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 25px rgba(47, 82, 51, 0.1);
+            height: fit-content;
+        }
+        
+        .instagram-grid {
+            margin-bottom: 1.5rem;
+        }
+        
+        .instagram-post {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .instagram-post:hover {
+            transform: scale(1.05);
+        }
+        
+        .package-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(47, 82, 51, 0.15);
+        }
+        
+        .event-grid {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+        }
+        
+        .feature-item {
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
         /* Mobile responsive */
         @media (max-width: 768px) {
             .hero {
@@ -394,6 +440,7 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#menu">Menu</a></li>
+                    <li><a href="#events">Events</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#location">Visit Us</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -412,10 +459,10 @@
                     🎉 GRAND OPENING - NOW OPEN! 🎉
                 </div>
                 <h1>Cafe Cultivate</h1>
-                <p class="hero-tagline">Farm-to-Cup Coffee & Fresh Eats</p>
+                <p class="hero-tagline">Farm-to-Cup Coffee & Micro Event Space</p>
                 <p style="font-size: 1.2rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                     Your new neighborhood coffee shop featuring specialty coffee, locally-sourced ingredients, 
-                    and a warm community atmosphere. Come experience the difference quality makes.
+                    and intimate event hosting. From coffee dates to private gatherings - we cultivate memorable experiences.
                 </p>
                 <div class="hero-buttons">
                     <a href="#menu" class="btn-coffee btn-lg">See Our Menu</a>
@@ -451,10 +498,10 @@
                 </div>
                 
                 <div class="atmosphere-card" data-aos="fade-up" style="animation-delay: 0.2s;">
-                    <div class="atmosphere-icon">🤝</div>
-                    <h3>Community Hub</h3>
-                    <p>More than just a coffee shop - we're a gathering place for neighbors, remote workers, 
-                    students, and anyone seeking connection.</p>
+                    <div class="atmosphere-icon">🎉</div>
+                    <h3>Event Space</h3>
+                    <p>Our intimate cafe transforms into the perfect venue for celebrations, meetings, and special gatherings. 
+                    Host your next event in our cozy, Instagram-worthy space.</p>
                 </div>
             </div>
         </div>
@@ -578,6 +625,159 @@
         </div>
     </section>
 
+    <!-- Events & Micro Event Space Section -->
+    <section id="events" class="section" style="background: linear-gradient(135deg, var(--cream), #f0ebe1);">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2>Micro Event Space</h2>
+                <p style="color: var(--gray-700); font-size: 1.1rem;">
+                    Intimate gatherings, meaningful connections, memorable moments
+                </p>
+            </div>
+            
+            <div class="grid grid-2 gap-8">
+                <!-- Event Space Info -->
+                <div class="event-info" data-aos="fade-right">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">🎉 Host Your Special Occasion</h3>
+                    <p style="margin-bottom: 2rem; line-height: 1.7;">
+                        Our cozy cafe transforms into the perfect intimate venue for your special moments. 
+                        Whether it's a birthday celebration, book club meeting, bridal shower, or business mixer, 
+                        we provide the warm atmosphere and exceptional service to make your event memorable.
+                    </p>
+                    
+                    <div class="event-features">
+                        <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: var(--accent-color); margin-right: 0.5rem; font-size: 1.2rem;">👥</span>
+                            <strong>Capacity:</strong>&nbsp;Up to 25 guests
+                        </div>
+                        <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: var(--accent-color); margin-right: 0.5rem; font-size: 1.2rem;">⏰</span>
+                            <strong>Duration:</strong>&nbsp;2-4 hour bookings
+                        </div>
+                        <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: var(--accent-color); margin-right: 0.5rem; font-size: 1.2rem;">🍰</span>
+                            <strong>Catering:</strong>&nbsp;Coffee, pastries & light bites
+                        </div>
+                        <div class="feature-item" style="display: flex; align-items: center; margin-bottom: 1rem;">
+                            <span style="color: var(--accent-color); margin-right: 0.5rem; font-size: 1.2rem;">📸</span>
+                            <strong>Ambiance:</strong>&nbsp;Perfect lighting for photos
+                        </div>
+                    </div>
+                    
+                    <div class="event-types" style="margin-top: 2rem;">
+                        <h4 style="color: var(--coffee-dark); margin-bottom: 1rem;">Perfect For:</h4>
+                        <div class="event-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <span>🎂 Birthday Parties</span>
+                            <span>📚 Book Clubs</span>
+                            <span>👰 Bridal Showers</span>
+                            <span>🤝 Business Meetups</span>
+                            <span>🎨 Art Workshops</span>
+                            <span>☕ Coffee Tastings</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-coffee" style="margin-top: 2rem; display: inline-block;">
+                        Book Your Event
+                    </a>
+                </div>
+                
+                <!-- Instagram Gallery -->
+                <div class="instagram-section" data-aos="fade-left">
+                    <div class="instagram-header" style="text-align: center; margin-bottom: 2rem;">
+                        <h3 style="color: var(--primary-color);">📸 Follow Our Journey</h3>
+                        <p style="color: var(--gray-600);">
+                            <a href="https://www.instagram.com/cafe_cultivate_/" target="_blank" style="color: var(--primary-color); text-decoration: none;">
+                                @cafe_cultivate_
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <!-- Instagram-style photo grid -->
+                    <div class="instagram-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-bottom: 1.5rem;">
+                        <!-- Placeholder images - These would be replaced with actual Instagram content -->
+                        <div class="instagram-post" style="aspect-ratio: 1; background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; position: relative; overflow: hidden;">
+                            ☕
+                            <div style="position: absolute; bottom: 8px; left: 8px; font-size: 0.8rem; opacity: 0.9;">Fresh Brew</div>
+                        </div>
+                        <div class="instagram-post" style="aspect-ratio: 1; background: linear-gradient(135deg, var(--secondary-color), var(--accent-color)); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; position: relative;">
+                            🥐
+                            <div style="position: absolute; bottom: 8px; left: 8px; font-size: 0.8rem; opacity: 0.9;">Pastries</div>
+                        </div>
+                        <div class="instagram-post" style="aspect-ratio: 1; background: linear-gradient(135deg, #8B4513, #D2B48C); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; position: relative;">
+                            🏪
+                            <div style="position: absolute; bottom: 8px; left: 8px; font-size: 0.8rem; opacity: 0.9;">Our Space</div>
+                        </div>
+                        <div class="instagram-post" style="aspect-ratio: 1; background: linear-gradient(135deg, var(--accent-color), #F4A460); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; position: relative;">
+                            🎉
+                            <div style="position: absolute; bottom: 8px; left: 8px; font-size: 0.8rem; opacity: 0.9;">Events</div>
+                        </div>
+                    </div>
+                    
+                    <div class="instagram-cta" style="text-align: center; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        <p style="margin-bottom: 1rem; color: var(--gray-700);">
+                            Stay updated on our grand opening progress, daily specials, and event highlights!
+                        </p>
+                        <a href="https://www.instagram.com/cafe_cultivate_/" target="_blank" class="btn btn-secondary" style="text-decoration: none;">
+                            Follow on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Packages -->
+            <div class="event-packages" style="margin-top: 4rem;">
+                <h3 style="text-align: center; color: var(--coffee-dark); margin-bottom: 2rem;">Event Packages</h3>
+                <div class="grid grid-3 gap-6">
+                    <div class="package-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">☕</div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Coffee & Chat</h4>
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            Perfect for small meetings, study groups, or casual get-togethers
+                        </p>
+                        <ul style="text-align: left; color: var(--gray-700); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                            <li>✓ Coffee service for up to 10 guests</li>
+                            <li>✓ Light snacks included</li>
+                            <li>✓ 2-hour booking</li>
+                            <li>✓ Cozy corner setup</li>
+                        </ul>
+                        <div style="color: var(--accent-color); font-size: 1.2rem; font-weight: 600;">Starting at $150</div>
+                    </div>
+                    
+                    <div class="package-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; border: 2px solid var(--accent-color); position: relative;">
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-color); color: var(--coffee-dark); padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">POPULAR</div>
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎂</div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Celebration Special</h4>
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            Birthday parties, anniversaries, and special milestones
+                        </p>
+                        <ul style="text-align: left; color: var(--gray-700); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                            <li>✓ Full cafe service for up to 20 guests</li>
+                            <li>✓ Custom cake & pastries</li>
+                            <li>✓ 3-hour exclusive use</li>
+                            <li>✓ Decorations & setup included</li>
+                        </ul>
+                        <div style="color: var(--accent-color); font-size: 1.2rem; font-weight: 600;">Starting at $350</div>
+                    </div>
+                    
+                    <div class="package-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Business Mixer</h4>
+                        <p style="color: var(--gray-600); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                            Professional networking events and business meetings
+                        </p>
+                        <ul style="text-align: left; color: var(--gray-700); font-size: 0.9rem; margin-bottom: 1.5rem;">
+                            <li>✓ Professional setup for 25 guests</li>
+                            <li>✓ Coffee, tea & light catering</li>
+                            <li>✓ 4-hour exclusive booking</li>
+                            <li>✓ AV setup available</li>
+                        </ul>
+                        <div style="color: var(--accent-color); font-size: 1.2rem; font-weight: 600;">Starting at $500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Location & Hours -->
     <section id="location" class="section">
         <div class="container">
@@ -683,8 +883,9 @@
                             <li>✓ Specialty coffee from sustainable farms</li>
                             <li>✓ Fresh pastries and light meals made daily</li>
                             <li>✓ Cozy atmosphere perfect for work or relaxation</li>
+                            <li>✓ Micro event space for intimate celebrations</li>
                             <li>✓ Community events and coffee education</li>
-                            <li>✓ Coffee catering available</li>
+                            <li>✓ Coffee catering and event packages available</li>
                         </ul>
                     </div>
                 </div>
@@ -713,8 +914,10 @@
                             <select id="interest" name="interest" class="form-input">
                                 <option value="">Select an option</option>
                                 <option value="Grand Opening Updates">Grand Opening Updates</option>
+                                <option value="Micro Event Space Booking">Micro Event Space Booking</option>
+                                <option value="Birthday Party Package">Birthday Party Package</option>
+                                <option value="Business Meeting Space">Business Meeting Space</option>
                                 <option value="Catering Services">Catering Services</option>
-                                <option value="Private Events">Private Events</option>
                                 <option value="Coffee Education">Coffee Education/Classes</option>
                                 <option value="General Questions">General Questions</option>
                             </select>
@@ -779,5 +982,144 @@
 
     <!-- Scripts -->
     <script src="/assets/js/main.js"></script>
+    <script>
+        // Cafe Cultivate specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Instagram integration placeholder
+            // This would connect to Instagram Basic Display API in production
+            const instagramPosts = [
+                {
+                    id: 1,
+                    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%232F5233"/><text x="200" y="180" text-anchor="middle" fill="white" font-size="60">☕</text><text x="200" y="240" text-anchor="middle" fill="white" font-size="20">Fresh Brew</text></svg>',
+                    caption: 'Starting each day with perfectly roasted coffee ☕ #CafeCultivate',
+                    type: 'coffee'
+                },
+                {
+                    id: 2,
+                    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23D4A574"/><text x="200" y="180" text-anchor="middle" fill="white" font-size="60">🥐</text><text x="200" y="240" text-anchor="middle" fill="white" font-size="20">Fresh Pastries</text></svg>',
+                    caption: 'Freshly baked every morning! 🥐 #FreshDaily #CafeCultivate',
+                    type: 'pastry'
+                },
+                {
+                    id: 3,
+                    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%238B4513"/><text x="200" y="180" text-anchor="middle" fill="white" font-size="60">🏪</text><text x="200" y="240" text-anchor="middle" fill="white" font-size="20">Our Space</text></svg>',
+                    caption: 'Getting ready for our grand opening! Perfect space for events 🎉',
+                    type: 'space'
+                },
+                {
+                    id: 4,
+                    image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23E8B86D"/><text x="200" y="180" text-anchor="middle" fill="white" font-size="60">🎉</text><text x="200" y="240" text-anchor="middle" fill="white" font-size="20">Events Ready</text></svg>',
+                    caption: 'Book your celebration with us! Perfect intimate venue ✨ #MicroEvents',
+                    type: 'event'
+                }
+            ];
+            
+            // Update Instagram posts with hover effects and links
+            const instagramGrid = document.querySelector('.instagram-grid');
+            if (instagramGrid) {
+                const posts = instagramGrid.querySelectorAll('.instagram-post');
+                posts.forEach((post, index) => {
+                    if (instagramPosts[index]) {
+                        post.addEventListener('click', function() {
+                            window.open('https://www.instagram.com/cafe_cultivate_/', '_blank');
+                        });
+                        
+                        post.style.cursor = 'pointer';
+                        post.title = instagramPosts[index].caption;
+                        
+                        // Add click analytics (placeholder)
+                        post.addEventListener('click', function() {
+                            console.log(`Instagram post clicked: ${instagramPosts[index].type}`);
+                        });
+                    }
+                });
+            }
+            
+            // Event package card interactions
+            const packageCards = document.querySelectorAll('.package-card');
+            packageCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Scroll to contact form and pre-fill with event inquiry
+                    const contactForm = document.getElementById('contact-form');
+                    const interestSelect = document.getElementById('interest');
+                    
+                    if (contactForm && interestSelect) {
+                        interestSelect.value = 'Micro Event Space Booking';
+                        contactForm.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Highlight the form briefly
+                        contactForm.style.background = 'rgba(232, 184, 109, 0.1)';
+                        setTimeout(() => {
+                            contactForm.style.background = '';
+                        }, 2000);
+                    }
+                });
+                
+                card.style.cursor = 'pointer';
+                card.title = 'Click to inquire about this package';
+            });
+            
+            // Form enhancement for event bookings
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    const interest = document.getElementById('interest').value;
+                    
+                    // Track event-related submissions
+                    if (interest.includes('Event') || interest.includes('Party') || interest.includes('Meeting')) {
+                        console.log('Event inquiry submitted:', interest);
+                        
+                        // Add event-specific thank you message
+                        setTimeout(() => {
+                            alert('Thank you for your event inquiry! We\'ll contact you within 24 hours to discuss your special occasion.');
+                        }, 500);
+                    }
+                });
+            }
+            
+            // Auto-refresh Instagram section (placeholder for future API integration)
+            function refreshInstagramFeed() {
+                // This would fetch fresh content from Instagram API
+                console.log('Instagram feed refresh - ready for API integration');
+            }
+            
+            // Refresh every 30 minutes when page is active
+            setInterval(refreshInstagramFeed, 30 * 60 * 1000);
+            
+            // Enhanced mobile event package navigation
+            if (window.innerWidth <= 768) {
+                const eventPackages = document.querySelector('.event-packages');
+                if (eventPackages) {
+                    eventPackages.style.overflowX = 'auto';
+                    eventPackages.style.scrollBehavior = 'smooth';
+                }
+            }
+        });
+        
+        // Event booking quick functions
+        function bookEventPackage(packageType) {
+            const interestSelect = document.getElementById('interest');
+            const contactSection = document.getElementById('contact');
+            
+            if (interestSelect && contactSection) {
+                // Map package types to form options
+                const packageMap = {
+                    'coffee-chat': 'Business Meeting Space',
+                    'celebration': 'Birthday Party Package', 
+                    'business': 'Business Meeting Space'
+                };
+                
+                interestSelect.value = packageMap[packageType] || 'Micro Event Space Booking';
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Instagram link tracking
+        function trackInstagramClick(source) {
+            console.log('Instagram clicked from:', source);
+            // Analytics tracking would go here
+        }
+    </script>
 </body>
 </html>
