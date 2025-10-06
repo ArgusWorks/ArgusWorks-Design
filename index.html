@@ -111,7 +111,7 @@
                         reservation system, and customer reviews.
                     </p>
                     <div class="demo-links">
-                        <a href="demos/bella-vista-restaurant/index.html" class="btn-demo">View Demo</a>
+                        <a href="/demos/bella-vista-restaurant/" class="btn-demo" onclick="handleDemoClick(event, 'demos/bella-vista-restaurant/index.html')">View Demo</a>
                         <a href="templates/local-business/README.md" class="btn-code">Documentation</a>
                     </div>
                 </div>
@@ -132,12 +132,54 @@
                         content, and layout for different industries.
                     </p>
                     <div class="demo-links">
-                        <a href="templates/local-business/index.html" class="btn-demo">View Template</a>
+                        <a href="/templates/local-business/" class="btn-demo" onclick="handleDemoClick(event, 'templates/local-business/index.html')">View Template</a>
                         <a href="templates/local-business/README.md" class="btn-code">Customize Guide</a>
                     </div>
                 </div>
             </div>
             
+            <!-- Refined Cravings Client Proposal -->
+            <div class="demo-card">
+                <div class="demo-preview" style="background: linear-gradient(135deg, #8b4513, #d2b48c);">
+                    🧀🍯
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; font-size: 1rem; opacity: 0.9;">
+                        Client Project
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3 class="demo-title">Refined Cravings Charcuterie</h3>
+                    <p class="demo-description">
+                        Premium charcuterie catering business website with elegant branding, 
+                        service showcase, and catering inquiry forms.
+                    </p>
+                    <div class="demo-links">
+                        <a href="/client-proposals/refined-cravings/" class="btn-demo" onclick="handleDemoClick(event, 'client-proposals/refined-cravings/index.html')">View Proposal</a>
+                        <a href="docs/CLIENT_DELIVERY_WORKFLOW.md" class="btn-code">Workflow</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cafe Cultivate Client Proposal -->
+            <div class="demo-card">
+                <div class="demo-preview" style="background: linear-gradient(135deg, #654321, #8b4513);">
+                    ☕🥐
+                    <div style="position: absolute; bottom: 1rem; left: 1rem; font-size: 1rem; opacity: 0.9;">
+                        Client Project
+                    </div>
+                </div>
+                <div class="demo-info">
+                    <h3 class="demo-title">Cafe Cultivate Coffee Shop</h3>
+                    <p class="demo-description">
+                        Modern coffee shop website with grand opening focus, menu system, 
+                        and Instagram integration for new business launch.
+                    </p>
+                    <div class="demo-links">
+                        <a href="/client-proposals/cafe-cultivate/" class="btn-demo" onclick="handleDemoClick(event, 'client-proposals/cafe-cultivate/index.html')">View Proposal</a>
+                        <a href="docs/CLIENT_DELIVERY_QUICK_START.md" class="btn-code">Quick Start</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Coming Soon -->
             <div class="demo-card" style="opacity: 0.7;">
                 <div class="demo-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
@@ -213,5 +255,30 @@
     </div>
     
     <script src="assets/js/main.js"></script>
+    <script>
+        // Handle demo clicks for development and production
+        function handleDemoClick(event, filePath) {
+            // Check if we're in development mode (localhost)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                // In development, open the file directly
+                event.preventDefault();
+                window.open(filePath, '_blank');
+            }
+            // In production, let the normal link behavior work with Netlify redirects
+        }
+        
+        // Add some visual feedback for demo cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const demoCards = document.querySelectorAll('.demo-card');
+            demoCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -24,3 +24,24 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+# Handle demo routes
+[[redirects]]
+  from = "/demos/bella-vista-restaurant/"
+  to = "/bella-vista.html"
+  status = 200
+
+[[redirects]]
+  from = "/templates/local-business/"
+  to = "/local-business.html"
+  status = 200
+
+[[redirects]]
+  from = "/client-proposals/refined-cravings/"
+  to = "/refined-cravings.html"
+  status = 200
+
+[[redirects]]
+  from = "/client-proposals/cafe-cultivate/"
+  to = "/cafe-cultivate.html"
+  status = 200

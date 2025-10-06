@@ -10,7 +10,11 @@
     "deploy": "netlify deploy --prod --dir=dist",
     "deploy:draft": "netlify deploy --dir=dist",
     "setup:client": "node scripts/setup-client.js",
-    "build:client": "npm run build && echo 'Client site ready for deployment'"
+    "build:client": "npm run build && echo 'Client site ready for deployment'",
+    "client:list": "node scripts/deploy-client.js list",
+    "client:deploy": "node scripts/deploy-client.js deploy",
+    "client:deploy:separate": "node scripts/deploy-client.js deploy $npm_config_client separate",
+    "client:deploy:branch": "node scripts/deploy-client.js deploy $npm_config_client branch"
   },
   "keywords": [
     "netlify",
