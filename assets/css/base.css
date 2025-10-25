@@ -1,11 +1,6 @@
 /* Base CSS Framework for Client Templates */
 :root {
-  /* Color System - Easily customizable per client */
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #60a5fa;
-  --secondary-color: #f59e0b;
-  --accent-color: #10b981;
+  /* Note: Primary colors defined in main.css for brand consistency */
   
   /* Neutral Colors */
   --white: #ffffff;
