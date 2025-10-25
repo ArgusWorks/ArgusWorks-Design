@@ -288,7 +288,7 @@
                     <div style="text-align: left; margin-bottom: 2rem;">
                         <div style="margin-bottom: 1.5rem;">
                             <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📧 Email</h4>
-                            <a href="mailto:hello@arguswebdesigns.com" style="color: white; text-decoration: none; font-size: 1.1rem;">hello@arguswebdesigns.com</a>
+                            <a href="mailto:info@arguswebdesigns.com" style="color: white; text-decoration: none; font-size: 1.1rem;">info@arguswebdesigns.com</a>
                         </div>
                         <div style="margin-bottom: 1.5rem;">
                             <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📱 Phone</h4>
@@ -301,7 +301,7 @@
                     </div>
                     
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="mailto:hello@arguswebdesigns.com" class="btn-primary" style="flex: 1; justify-content: center;">
+                        <a href="mailto:info@arguswebdesigns.com" class="btn-primary" style="flex: 1; justify-content: center;">
                             Send Email
                         </a>
                         <a href="tel:+1234567890" class="btn-secondary" style="flex: 1; justify-content: center;">
@@ -314,27 +314,90 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--darker-bg); color: var(--text-secondary); padding: 3rem 0 2rem;">
+    <footer style="background: var(--darkest-bg); color: var(--text-secondary); padding: 4rem 0 2rem;">
         <div class="container">
-            <div style="text-align: center;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: white; margin-bottom: 1rem;">
-                    🎯 Argus Web Designs
-                </div>
-                <p style="margin-bottom: 2rem;">Expert web design and development services that help businesses thrive online. Visit us at www.arguswebdesigns.com</p>
-                
-                <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                    <a href="#services" style="color: var(--text-secondary); text-decoration: none;">Services</a>
-                    <a href="#portfolio" style="color: var(--text-secondary); text-decoration: none;">Portfolio</a>
-                    <a href="mailto:hello@arguswebdesigns.com" style="color: var(--text-secondary); text-decoration: none;">hello@arguswebdesigns.com</a>
-                    <a href="docs/CLIENT_DELIVERY_WORKFLOW.md" style="color: var(--text-secondary); text-decoration: none;">Process</a>
+            <div style="text-align: center; max-width: 1000px; margin: 0 auto;">
+                <!-- Logo Section -->
+                <div style="margin-bottom: 2rem; display: flex; justify-content: center; align-items: center;">
+                    <img src="assets/images/FullLogo_Transparent_NoBuffer_WhiteText.png" 
+                         alt="Argus Web Designs" 
+                         style="height: 140px; width: auto; max-width: 100%; object-fit: contain;">
                 </div>
                 
-                <div style="border-top: 1px solid var(--medium-bg); padding-top: 2rem;">
-                    <p>&copy; 2025 Argus Web Designs. All rights reserved. | www.arguswebdesigns.com</p>
+                <!-- Description -->
+                <p style="margin-bottom: 3rem; font-size: 1.1rem; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9;">
+                    Expert web design and development services that help businesses thrive online. Visit us at www.arguswebdesigns.com
+                </p>
+                
+                <!-- Navigation Links -->
+                <div style="display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                    <a href="#services" 
+                       style="color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 0.5rem;">
+                       Services
+                    </a>
+                    <a href="#portfolio" 
+                       style="color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 0.5rem;">
+                       Portfolio
+                    </a>
+                    <a href="mailto:info@arguswebdesigns.com" 
+                       style="color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 0.5rem;">
+                       info@arguswebdesigns.com
+                    </a>
+                    <a href="docs/CLIENT_DELIVERY_WORKFLOW.md" 
+                       style="color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; padding: 0.5rem;">
+                       Process
+                    </a>
+                </div>
+                
+                <!-- Copyright -->
+                <div style="border-top: 1px solid var(--medium-bg); padding-top: 2rem; margin-top: 1rem;">
+                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">
+                        &copy; 2025 Argus Web Designs. All rights reserved. | www.arguswebdesigns.com
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
+    
+    <style>
+    /* Footer Link Hover Effects */
+    footer a:hover {
+        color: var(--accent-color) !important;
+        transform: translateY(-2px);
+    }
+    
+    /* Responsive Footer */
+    @media (max-width: 768px) {
+        footer img {
+            height: 100px !important;
+        }
+        
+        footer p {
+            font-size: 1rem !important;
+            padding: 0 1rem;
+        }
+        
+        footer div[style*="gap: 2.5rem"] {
+            gap: 1.5rem !important;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        footer div[style*="gap: 2.5rem"] a {
+            padding: 0.75rem 1rem !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        footer {
+            padding: 3rem 0 1.5rem !important;
+        }
+        
+        footer img {
+            height: 80px !important;
+        }
+    }
+    </style>
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>

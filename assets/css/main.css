@@ -8,6 +8,7 @@
     --brand-dark-blue: rgb(39, 76, 90);       /* Card backgrounds, sections */
     
     /* Logo Colors */
+    --brand-black: rgb(5, 20, 25);              /* Logo primary color */
     --brand-navy: rgb(9, 44, 58);             /* Primary text, headers */
     --brand-deep-blue: rgb(3, 62, 109);       /* Primary buttons, CTAs */
     --brand-bright-blue: rgb(48, 147, 242);   /* Interactive elements, links */
@@ -20,6 +21,7 @@
     --accent-color: var(--brand-bright-blue);
     --dark-bg: var(--brand-dark-navy);
     --darker-bg: var(--brand-navy);
+    --darkest-bg: var(--brand-black);
     --medium-bg: var(--brand-dark-blue);
     --light-bg: var(--brand-light-gray);
     --text-primary: var(--brand-navy);
