@@ -218,12 +218,129 @@ const Utils = {
   }
 };
 
+// Professional web design business specific functionality
+class MainSiteFunctionality {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.setupSmoothScrolling();
+    this.setupNavigationEffects();
+    this.setupCardInteractions();
+    this.setupStatsAnimation();
+  }
+
+  // Smooth scrolling for navigation links
+  setupSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - 80; // Account for fixed nav
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+
+  // Add scroll effect to navigation
+  setupNavigationEffects() {
+    const nav = document.querySelector('.navbar');
+    if (!nav) return;
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(255,255,255,0.98)';
+        nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+      } else {
+        nav.style.background = 'rgba(255,255,255,0.95)';
+        nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+      }
+    });
+  }
+
+  // Portfolio and service card interactions
+  setupCardInteractions() {
+    // Portfolio card interactions
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    portfolioCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px)';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(-5px)';
+      });
+    });
+
+    // Service card interactions
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px)';
+        this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.2)';
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(-10px)';
+        this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.15)';
+      });
+    });
+  }
+
+  // Stats counter animation
+  setupStatsAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers.length === 0) return;
+
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'pulse 0.6s ease-out';
+        }
+      });
+    }, observerOptions);
+
+    statNumbers.forEach(stat => {
+      statsObserver.observe(stat);
+    });
+  }
+}
+
+// Handle demo clicks for development and production
+function handleDemoClick(event, filePath) {
+  // Check if we're in development mode (localhost)
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    // In development, open the file directly
+    event.preventDefault();
+    window.open(filePath, '_blank');
+  }
+  // In production, let the normal link behavior work with Netlify redirects
+}
+
+// Business analytics tracking (placeholder)
+function trackBusinessGoal(action, value) {
+  console.log('Business Goal:', action, value);
+  // Analytics integration would go here
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new WebsiteCore();
+  new MainSiteFunctionality();
   Utils.lazyLoadImages();
 });
 
 // Export for use in other scripts
 window.WebsiteCore = WebsiteCore;
 window.Utils = Utils;
+window.handleDemoClick = handleDemoClick;
+window.trackBusinessGoal = trackBusinessGoal;
