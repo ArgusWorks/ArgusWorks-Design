@@ -1,7 +1,8 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-logo">
-      <img src="/assets/FullLogo_Transparent_NoBuffer.png" alt="Argus Web Designs Logo" />
+      <img src="/assets/images/IconOnly_Transparent_NoBuffer.png" alt="Argus Web Designs Logo" />
+        <span>arguswebdesigns</span>
     </div>
     <ul class="nav-menu" [class.active]="isMenuOpen">
       <li>
@@ -25,17 +26,32 @@
         </a>
       </li>
       <li>
-        <a href="#services" class="nav-link" (click)="closeMenu()">
+        <a 
+          routerLink="/services" 
+          class="nav-link"
+          [class.active]="isActiveRoute('/services')"
+          (click)="closeMenu()"
+        >
           Services
         </a>
       </li>
       <li>
-        <a href="#portfolio" class="nav-link" (click)="closeMenu()">
-          Portfolio
+        <a 
+          routerLink="/work" 
+          class="nav-link"
+          [class.active]="isActiveRoute('/work')"
+          (click)="closeMenu()"
+        >
+          Work
         </a>
       </li>
       <li>
-        <a href="#contact" class="nav-link" (click)="closeMenu()">
+        <a 
+          routerLink="/contact" 
+          class="nav-link"
+          [class.active]="isActiveRoute('/contact')"
+          (click)="closeMenu()"
+        >
           Contact
         </a>
       </li>

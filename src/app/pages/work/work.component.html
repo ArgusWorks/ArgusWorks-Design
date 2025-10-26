@@ -1,0 +1,172 @@
+<!-- Work Section -->
+<section class="work-section">
+  <div class="container">
+    <div class="section-header">
+      <h1>Our Work</h1>
+      <p>
+        See how we've helped businesses transform their digital presence and achieve 
+        measurable growth through strategic design and development.
+      </p>
+    </div>
+
+    <!-- Featured Case Studies -->
+    <div class="featured-cases" *ngIf="getFeaturedCases().length > 0">
+      <h2>Featured Case Studies</h2>
+      <div class="featured-grid">
+        <div class="featured-case" *ngFor="let case of getFeaturedCases()">
+          <div class="case-image">
+            <img [src]="case.image" [alt]="case.title" />
+            <div class="case-overlay">
+              <div class="case-links">
+                <a [routerLink]="case.link" class="btn-primary" *ngIf="case.link !== '#'">View Case Study</a>
+                <a [routerLink]="case.demoLink" class="btn-secondary" *ngIf="case.demoLink !== '#'">Live Demo</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-content">
+            <div class="case-header">
+              <div class="case-category">{{ case.category }}</div>
+              <h3>{{ case.title }}</h3>
+              <p class="case-subtitle">{{ case.subtitle }}</p>
+            </div>
+            
+            <p class="case-description">{{ case.description }}</p>
+            
+            <div class="case-services">
+              <span class="service-tag" *ngFor="let service of case.services">{{ service }}</span>
+            </div>
+            
+            <div class="case-results">
+              <h4>Key Results:</h4>
+              <ul>
+                <li *ngFor="let result of case.results">{{ result }}</li>
+              </ul>
+            </div>
+            
+            <div class="case-details">
+              <div class="detail-item">
+                <strong>Timeline:</strong> {{ case.timeline }}
+              </div>
+              <div class="detail-item">
+                <strong>Technologies:</strong> {{ case.technologies.join(', ') }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All Case Studies Grid -->
+    <div class="all-cases">
+      <h2>All Projects</h2>
+      <div class="cases-grid">
+        <div class="case-card" *ngFor="let case of caseStudies">
+          <div class="case-card-image">
+            <img [src]="case.image" [alt]="case.title" />
+            <div class="case-card-overlay">
+              <div class="overlay-content">
+                <h4>{{ case.title }}</h4>
+                <p>{{ case.subtitle }}</p>
+                <div class="card-links">
+                  <a [routerLink]="case.link" *ngIf="case.link !== '#'">Case Study</a>
+                  <a [routerLink]="case.demoLink" *ngIf="case.demoLink !== '#'">Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="case-card-content">
+            <div class="case-card-header">
+              <span class="case-card-category">{{ case.category }}</span>
+              <h3>{{ case.title }}</h3>
+            </div>
+            <p>{{ case.description }}</p>
+            <div class="case-card-services">
+              <span class="service-badge" *ngFor="let service of case.services">{{ service }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industries Section -->
+    <div class="industries-section">
+      <h2>Industries We Serve</h2>
+      <p>We've worked with businesses across various industries, bringing deep understanding 
+         of sector-specific challenges and opportunities.</p>
+      
+      <div class="industries-grid">
+        <div class="industry-item" *ngFor="let industry of industries">
+          <div class="industry-icon">{{ industry.icon }}</div>
+          <h3>{{ industry.name }}</h3>
+          <p>{{ industry.count }} Project{{ industry.count > 1 ? 's' : '' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Testimonials -->
+    <div class="testimonials-section">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+          <div class="testimonial-content">
+            <p>"{{ testimonial.quote }}"</p>
+          </div>
+          <div class="testimonial-author">
+            <img [src]="testimonial.avatar" [alt]="testimonial.author" />
+            <div class="author-info">
+              <h4>{{ testimonial.author }}</h4>
+              <p>{{ testimonial.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Process Highlight -->
+    <div class="process-highlight">
+      <h2>Our Results-Driven Process</h2>
+      <p>Every successful project follows our proven methodology that ensures exceptional results.</p>
+      
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <h3>Discovery & Strategy</h3>
+          <p>Deep dive into your business goals, target audience, and competitive landscape.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <h3>Design & Prototyping</h3>
+          <p>Create compelling designs that align with your brand and user expectations.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <h3>Development & Testing</h3>
+          <p>Build robust solutions with thorough testing for optimal performance.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <h3>Launch & Optimization</h3>
+          <p>Deploy your project and continuously optimize for better results.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="work-cta">
+      <h2>Ready to Join Our Success Stories?</h2>
+      <p>
+        Let's discuss how we can help transform your business with a strategic, 
+        results-driven digital solution.
+      </p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="btn-primary">Start Your Project</a>
+        <a routerLink="/services" class="btn-secondary">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>

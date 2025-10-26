@@ -1,0 +1,182 @@
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h1>Get In Touch</h1>
+      <p>
+        Ready to start your project? Let's discuss how we can help bring your vision to life 
+        and grow your business online.
+      </p>
+    </div>
+    
+    <div class="contact-content">
+      <!-- Contact Information -->
+      <div class="contact-info-section">
+        <h2>Let's Start a Conversation</h2>
+        <p>
+          Every great project begins with understanding your goals, challenges, and vision. 
+          We're here to listen and provide expert guidance on your digital journey.
+        </p>
+        
+        <div class="contact-methods">
+          <div class="contact-method" *ngFor="let method of contactInfo">
+            <div class="method-icon">{{ method.icon }}</div>
+            <div class="method-details">
+              <h3>{{ method.title }}</h3>
+              <p class="method-value">{{ method.details }}</p>
+              <p class="method-description">{{ method.description }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-overview">
+          <h3>What We Can Help With</h3>
+          <div class="service-tags">
+            <span class="service-tag" *ngFor="let service of services">{{ service }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-section">
+        <div class="form-container">
+          <h2>Tell Us About Your Project</h2>
+          <form (ngSubmit)="onSubmit()" #contactFormRef="ngForm" class="contact-form">
+            
+            <!-- Basic Information -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  [(ngModel)]="contactForm.name"
+                  required 
+                  class="form-input"
+                  placeholder="Your full name"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  [(ngModel)]="contactForm.email"
+                  required 
+                  class="form-input"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company">Company/Organization</label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company"
+                  [(ngModel)]="contactForm.company"
+                  class="form-input"
+                  placeholder="Your company name"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="service">Service Needed</label>
+                <select 
+                  id="service" 
+                  name="service"
+                  [(ngModel)]="contactForm.service"
+                  class="form-select"
+                >
+                  <option value="">Select a service</option>
+                  <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select 
+                  id="budget" 
+                  name="budget"
+                  [(ngModel)]="contactForm.budget"
+                  class="form-select"
+                >
+                  <option value="">Select budget range</option>
+                  <option *ngFor="let budget of budgetRanges" [value]="budget">{{ budget }}</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="timeline">Project Timeline</label>
+                <select 
+                  id="timeline" 
+                  name="timeline"
+                  [(ngModel)]="contactForm.timeline"
+                  class="form-select"
+                >
+                  <option value="">Select timeline</option>
+                  <option *ngFor="let timeline of timelineOptions" [value]="timeline">{{ timeline }}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details *</label>
+              <textarea 
+                id="message" 
+                name="message"
+                [(ngModel)]="contactForm.message"
+                required
+                rows="6"
+                class="form-textarea"
+                placeholder="Tell us about your project, goals, and any specific requirements..."
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="btn-primary form-submit"
+              [disabled]="!contactFormRef.valid"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>How long does a typical project take?</h3>
+          <p>Project timelines vary based on complexity, but most websites are completed within 4-8 weeks from start to finish.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Do you provide ongoing maintenance?</h3>
+          <p>Yes! We offer comprehensive maintenance packages to keep your website secure, updated, and performing optimally.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What's included in your web design service?</h3>
+          <p>Our full-service approach includes design, development, content strategy, SEO optimization, and training on managing your site.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can you work with my existing brand?</h3>
+          <p>Absolutely! We can work with your existing branding or help develop new brand elements to strengthen your online presence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
