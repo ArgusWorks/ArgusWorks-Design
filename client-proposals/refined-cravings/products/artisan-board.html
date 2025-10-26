@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artisan Board - Refined Cravings</title>
+    <meta name="description" content="Classic artisan charcuterie board featuring aged cheddar, creamy brie, prosciutto di Parma, and seasonal accompaniments.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../assets/css/refined-cravings.css">
+    <link rel="stylesheet" href="../assets/css/product-page.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="../index.html" class="logo">
+                Refined Cravings
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="../index.html#products">Our Boards</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#testimonials">Reviews</a></li>
+                <li><a href="../index.html#contact">Book Event</a></li>
+                <li><a href="#" class="cart-toggle">
+                    🛒 Cart 
+                    <span class="cart-badge">0</span>
+                </a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Product Page Content -->
+    <main class="product-page">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="../index.html">Home</a> 
+                <span class="separator">›</span>
+                <a href="../index.html#products">Products</a>
+                <span class="separator">›</span>
+                <span class="current">The Artisan Board</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="product-layout">
+                <!-- Left Side - Gallery -->
+                <div class="product-gallery">
+                    <!-- Main Image/Video Display -->
+                    <div class="gallery-main">
+                        <div class="media-container">
+                            <img id="main-media" 
+                                 src="../assets/images/rc_bloom_board_1.avif" 
+                                 alt="The Artisan Board - Classic Charcuterie Collection"
+                                 class="main-image active">
+                        </div>
+                        
+                        <!-- Gallery Controls -->
+                        <div class="gallery-controls">
+                            <button class="gallery-btn prev-btn" onclick="app.previousMedia()">‹</button>
+                            <button class="gallery-btn next-btn" onclick="app.nextMedia()">›</button>
+                        </div>
+                        
+                        <!-- Zoom Button -->
+                        <button class="zoom-btn" onclick="app.openLightbox()">🔍</button>
+                    </div>
+
+                    <!-- Thumbnail Gallery -->
+                    <div class="gallery-thumbnails">
+                        <div class="thumbnail active" data-media="image" data-src="../assets/images/rc_bloom_board_1.avif">
+                            <img src="../assets/images/rc_bloom_board_1.avif" alt="Main product image">
+                        </div>
+                        <div class="thumbnail" data-media="image" data-src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Detailed view">
+                        </div>
+                        <div class="thumbnail" data-media="image" data-src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ingredients close-up">
+                        </div>
+                        <!-- Video Thumbnail Example -->
+                        <div class="thumbnail video-thumb" data-media="video" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-preview">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Making of video">
+                                <div class="play-overlay">▶</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Details -->
+                <div class="product-details">
+                    <!-- Product Header -->
+                    <div class="product-header">
+                        <div class="product-badge-large">Popular Choice</div>
+                        <span class="product-category-large">Classic Collection</span>
+                        <h1 class="product-title-large">The Artisan Board</h1>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(127 reviews)</span>
+                        </div>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="product-pricing-large">
+                        <span class="current-price">$89.99</span>
+                        <span class="price-note">+ delivery</span>
+                        <div class="price-breakdown">
+                            <small>Serves 8-10 people • $9.00 per person</small>
+                        </div>
+                    </div>
+
+                    <!-- Product Description -->
+                    <div class="product-description-large">
+                        <p>Our signature selection featuring premium aged cheddar, creamy French brie, 
+                        authentic prosciutto di Parma, artisanal salami, fresh seasonal fruits, 
+                        handpicked nuts, and gourmet crackers.</p>
+                        
+                        <p>Perfect for intimate gatherings, corporate meetings, or special celebrations. 
+                        Each board is carefully curated and beautifully presented on sustainable bamboo boards.</p>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="product-features-large">
+                        <h3>What's Included:</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🧀</span>
+                                <div>
+                                    <strong>3 Premium Cheeses</strong>
+                                    <p>Aged cheddar, French brie, artisan selection</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🥓</span>
+                                <div>
+                                    <strong>2 Cured Meats</strong>
+                                    <p>Prosciutto di Parma, artisanal salami</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🍇</span>
+                                <div>
+                                    <strong>Fresh Accompaniments</strong>
+                                    <p>Seasonal fruits, nuts, gourmet crackers</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🌿</span>
+                                <div>
+                                    <strong>Artisan Presentation</strong>
+                                    <p>Bamboo board, garnish, serving utensils</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Section -->
+                    <div class="add-to-cart-section">
+                        <div class="quantity-selector">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="qty-btn decrease" onclick="app.decreaseQuantity()">-</button>
+                                <input type="number" id="quantity" value="1" min="1" max="10">
+                                <button class="qty-btn increase" onclick="app.increaseQuantity()">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-actions">
+                            <button class="btn btn-primary btn-xl add-to-cart" 
+                                    data-product-name="Signature Artisan Board"
+                                    data-product-price="89.99"
+                                    data-product-image="assets/images/rc_bloom_board_1.avif">
+                                Add to Cart - $89.99
+                            </button>
+                        </div>
+
+                        <div class="delivery-info">
+                            <div class="delivery-item">
+                                <span class="delivery-icon">🚚</span>
+                                <div>
+                                    <strong>Free Delivery</strong>
+                                    <p>On orders over $150 within 20 miles</p>
+                                </div>
+                            </div>
+                            <div class="delivery-item">
+                                <span class="delivery-icon">⏰</span>
+                                <div>
+                                    <strong>48 Hour Notice</strong>
+                                    <p>Same-day available with rush fee</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Reviews Section -->
+            <section class="product-reviews">
+                <div class="reviews-header">
+                    <h2>Customer Reviews</h2>
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <span class="average-rating">4.9</span>
+                            <div class="stars-large">★★★★★</div>
+                            <span class="total-reviews">Based on 127 reviews</span>
+                        </div>
+                        <button class="btn btn-outline write-review-btn">Write a Review</button>
+                    </div>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Sarah M.</strong>
+                                <span class="review-date">2 weeks ago</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">"Perfect for our corporate event! The presentation was stunning and the quality exceeded expectations. Every detail was thoughtfully arranged."</p>
+                        <div class="review-meta">
+                            <span class="verified">✓ Verified Purchase</span>
+                            <span class="event-type">Corporate Event • 12 guests</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Michael R.</strong>
+                                <span class="review-date">1 month ago</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">"The Artisan Board was the highlight of our anniversary party. Guests couldn't stop talking about the amazing cheese selection and beautiful presentation."</p>
+                        <div class="review-meta">
+                            <span class="verified">✓ Verified Purchase</span>
+                            <span class="event-type">Anniversary • 10 guests</span>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <strong>Jennifer L.</strong>
+                                <span class="review-date">3 weeks ago</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <p class="review-text">"Outstanding quality and service. The board arrived exactly on time and looked even better than the photos. Will definitely order again!"</p>
+                        <div class="review-meta">
+                            <span class="verified">✓ Verified Purchase</span>
+                            <span class="event-type">Birthday Party • 8 guests</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <h2>You Might Also Like</h2>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1528712306091-ed0763094c98?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Premium Collection">
+                        <h3>The Grand Grazing Table</h3>
+                        <p class="related-price">$189.99</p>
+                    </div>
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Corporate Collection">
+                        <h3>Executive Board Package</h3>
+                        <p class="related-price">$149.99</p>
+                    </div>
+                    <div class="related-card">
+                        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wedding Collection">
+                        <h3>Romantic Celebration Board</h3>
+                        <p class="related-price">$299.99</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Lightbox for Image Zoom -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="app.closeLightbox()">×</button>
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-controls">
+                <button class="lightbox-btn prev" onclick="app.previousLightboxMedia()">‹</button>
+                <button class="lightbox-btn next" onclick="app.nextLightboxMedia()">›</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" onclick="app.toggleCart()">×</button>
+        </div>
+        <div class="cart-content">
+            <!-- Cart content will be dynamically populated -->
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/refined-cravings.js"></script>
+    <script src="../assets/js/product-page.js"></script>
+</body>
+</html>
