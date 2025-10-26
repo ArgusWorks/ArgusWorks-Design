@@ -1,8 +1,6 @@
-# Netlify SPA redirect rules for React Router
+# Netlify SPA redirect rules for Angular Router
 /*    /index.html   200
 
-# Legacy template redirects (optional)
-/bella-vista    /demos/bella-vista-restaurant/index.html   200
-/local-business    /templates/local-business/index.html   200
-/refined-cravings    /client-proposals/refined-cravings/index.html   200
-/cafe-cultivate    /client-proposals/cafe-cultivate/index.html   200
+# Legacy redirects to new Angular routes
+/bella-vista    /demos/refined-cravings   301
+/refined-cravings    /case-studies/refined-cravings   301

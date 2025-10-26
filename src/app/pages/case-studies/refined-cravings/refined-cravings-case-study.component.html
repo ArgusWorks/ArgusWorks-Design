@@ -1,91 +1,91 @@
-<div class="case-study-container">
-  <header class="case-study-header">
-    <div class="breadcrumb">
-      <a routerLink="/">Home</a> / <span>Case Studies</span> / <span class="current">Refined Cravings</span>
+<div class="container py-8">
+  <header class="text-center mb-16">
+    <div class="breadcrumb mb-4 text-sm text-neutral-600">
+      <a routerLink="/" class="text-primary">Home</a> / <span>Case Studies</span> / <span class="font-semibold text-neutral-900">Refined Cravings</span>
     </div>
-    <h1>Refined Cravings Restaurant</h1>
-    <p class="subtitle">Digital Transformation Success Story</p>
+    <h1 class="text-5xl font-bold text-neutral-900 mb-2">Refined Cravings Restaurant</h1>
+    <p class="text-xl text-neutral-600 mb-8">Digital Transformation Success Story</p>
     
-    <div class="results-overview">
-      <div class="result-card">
-        <div class="result-number">{{ businessResults.bookingIncrease }}</div>
-        <div class="result-label">Booking Increase</div>
+    <div class="results-overview grid gap-8 mt-8">
+      <div class="gradient-card text-center">
+        <div class="text-4xl font-bold mb-2">{{ businessResults.bookingIncrease }}</div>
+        <div class="text-base opacity-90">Booking Increase</div>
       </div>
-      <div class="result-card">
-        <div class="result-number">{{ businessResults.orderIncrease }}</div>
-        <div class="result-label">Online Orders</div>
+      <div class="gradient-card text-center">
+        <div class="text-4xl font-bold mb-2">{{ businessResults.orderIncrease }}</div>
+        <div class="text-base opacity-90">Online Orders</div>
       </div>
-      <div class="result-card">
-        <div class="result-number">{{ businessResults.revenue }}</div>
-        <div class="result-label">Monthly Revenue</div>
+      <div class="gradient-card text-center">
+        <div class="text-4xl font-bold mb-2">{{ businessResults.revenue }}</div>
+        <div class="text-base opacity-90">Monthly Revenue</div>
       </div>
-      <div class="result-card">
-        <div class="result-number">{{ businessResults.customerRetention }}</div>
-        <div class="result-label">Customer Retention</div>
+      <div class="gradient-card text-center">
+        <div class="text-4xl font-bold mb-2">{{ businessResults.customerRetention }}</div>
+        <div class="text-base opacity-90">Customer Retention</div>
       </div>
     </div>
   </header>
 
-  <section class="challenge-solution">
-    <div class="section-half">
-      <h2>The Challenge</h2>
-      <p>Refined Cravings, a family-owned restaurant in downtown Austin, was struggling to maintain business during the COVID-19 pandemic. With limited digital presence and no online ordering system, they were losing customers to competitors.</p>
-      <ul class="challenge-list">
-        <li *ngFor="let challenge of challenges">{{ challenge }}</li>
+  <section class="challenge-solution grid gap-16 my-16">
+    <div>
+      <h2 class="text-3xl font-bold text-neutral-900 mb-4">The Challenge</h2>
+      <p class="text-neutral-600 mb-6">Refined Cravings, a family-owned restaurant in downtown Austin, was struggling to maintain business during the COVID-19 pandemic. With limited digital presence and no online ordering system, they were losing customers to competitors.</p>
+      <ul class="challenge-list space-y-3">
+        <li *ngFor="let challenge of challenges" class="text-neutral-700">{{ challenge }}</li>
       </ul>
     </div>
     
-    <div class="section-half">
-      <h2>Our Solution</h2>
-      <p>We developed a comprehensive digital strategy that transformed their business model and dramatically increased their customer reach and revenue.</p>
-      <ul class="solution-list">
-        <li *ngFor="let solution of solutions">{{ solution }}</li>
+    <div>
+      <h2 class="text-3xl font-bold text-neutral-900 mb-4">Our Solution</h2>
+      <p class="text-neutral-600 mb-6">We developed a comprehensive digital strategy that transformed their business model and dramatically increased their customer reach and revenue.</p>
+      <ul class="solution-list space-y-3">
+        <li *ngFor="let solution of solutions" class="text-neutral-700">{{ solution }}</li>
       </ul>
     </div>
   </section>
 
-  <section class="process-timeline">
-    <h2>Project Timeline</h2>
+  <section class="my-16">
+    <h2 class="text-center text-3xl font-bold text-neutral-900 mb-12">Project Timeline</h2>
     <div class="timeline">
       <div class="timeline-item" *ngFor="let step of processSteps">
         <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <h3>{{ step.phase }}</h3>
-          <div class="duration">{{ step.duration }}</div>
-          <ul>
-            <li *ngFor="let activity of step.activities">{{ activity }}</li>
+        <div class="timeline-content bg-neutral-50 p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold text-neutral-900 mb-2">{{ step.phase }}</h3>
+          <div class="text-primary font-semibold mb-4">{{ step.duration }}</div>
+          <ul class="space-y-2">
+            <li *ngFor="let activity of step.activities" class="text-neutral-600">{{ activity }}</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="technologies">
-    <h2>Technologies Used</h2>
-    <div class="tech-grid">
-      <div class="tech-item" *ngFor="let tech of technologies">
+  <section class="my-16 text-center">
+    <h2 class="text-3xl font-bold text-neutral-900 mb-8">Technologies Used</h2>
+    <div class="tech-grid grid gap-4">
+      <div class="bg-neutral-100 p-4 rounded font-medium text-neutral-700" *ngFor="let tech of technologies">
         {{ tech }}
       </div>
     </div>
   </section>
 
-  <section class="testimonials">
-    <h2>Client Testimonials</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial" *ngFor="let testimonial of testimonials">
-        <blockquote>"{{ testimonial.quote }}"</blockquote>
-        <cite>
-          <strong>{{ testimonial.author }}</strong><br>
+  <section class="my-16 text-center">
+    <h2 class="text-3xl font-bold text-neutral-900 mb-8">Client Testimonials</h2>
+    <div class="testimonial-grid grid gap-8">
+      <div class="testimonial card" *ngFor="let testimonial of testimonials">
+        <blockquote class="text-lg text-neutral-700 mb-6 italic">"{{ testimonial.quote }}"</blockquote>
+        <cite class="text-neutral-600">
+          <strong class="text-neutral-900">{{ testimonial.author }}</strong><br>
           {{ testimonial.title }}
         </cite>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
-    <h2>Ready to Transform Your Business?</h2>
-    <p>See how we can help your restaurant or local business achieve similar results.</p>
-    <div class="cta-buttons">
+  <section class="cta-section text-center p-12 rounded-xl mt-16">
+    <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+    <p class="text-lg mb-8 opacity-90">See how we can help your restaurant or local business achieve similar results.</p>
+    <div class="flex gap-4 justify-center">
       <a routerLink="/demos/refined-cravings" class="btn btn-primary">View Live Demo</a>
       <a routerLink="/about" class="btn btn-secondary">Contact Us</a>
     </div>

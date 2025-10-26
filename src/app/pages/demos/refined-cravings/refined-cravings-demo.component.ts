@@ -15,25 +15,24 @@ export class RefinedCravingsDemoComponent {
   demoUrl: SafeResourceUrl;
 
   demoFeatures = [
-    'Mobile-responsive design',
-    'Online ordering system',
-    'Menu browsing with categories',
-    'Customer reviews integration',
-    'Location and contact info',
-    'Social media integration'
+    '✨ Artisan charcuterie board showcase',
+    '📱 Fully responsive mobile design',
+    '🎨 Custom brand styling and animations',
+    '🧀 Interactive menu with pricing',
+    '👥 Customer testimonials section',
+    '📞 Contact information and hours'
   ];
 
   businessImpact = [
-    { metric: 'Online Orders', value: '↑ 180%' },
-    { metric: 'Mobile Traffic', value: '↑ 220%' },
-    { metric: 'Customer Engagement', value: '↑ 150%' },
-    { metric: 'Average Order Value', value: '↑ 95%' }
+    { metric: 'Catering Inquiries', value: '↑ 240%' },
+    { metric: 'Mobile Bookings', value: '↑ 185%' },
+    { metric: 'Brand Recognition', value: '↑ 160%' },
+    { metric: 'Average Order Size', value: '↑ 125%' }
   ];
 
   constructor(private sanitizer: DomSanitizer) {
-    // In a real implementation, this would be the actual restaurant's website
-    // For demo purposes, we'll use a placeholder
-    this.demoUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://example.com');
+    // Point to our actual demo file
+    this.demoUrl = this.sanitizer.bypassSecurityTrustResourceUrl('/assets/demos/refined-cravings.html');
   }
 
   onFrameLoad() {

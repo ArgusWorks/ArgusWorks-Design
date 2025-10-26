@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ScrollAnimationService } from '../../../services/scroll-animation.service';
 
 @Component({
   selector: 'app-refined-cravings-case-study',
@@ -9,7 +10,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './refined-cravings-case-study.component.html',
   styleUrls: ['./refined-cravings-case-study.component.css']
 })
-export class RefinedCravingsCaseStudyComponent {
+export class RefinedCravingsCaseStudyComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChildren('animateElement', { read: ElementRef }) animateElements!: QueryList<ElementRef>;
+
+  constructor(private scrollAnimation: ScrollAnimationService) {}
   businessResults = {
     bookingIncrease: '250%',
     orderIncrease: '180%',
@@ -75,4 +79,23 @@ export class RefinedCravingsCaseStudyComponent {
       title: "Head Chef, Refined Cravings"
     }
   ];
+
+  ngOnInit(): void {
+    // Component initialization
+  }
+
+  ngAfterViewInit(): void {
+    // Add scroll animations to elements - like Neuronux does
+    this.animateElements.forEach((element, index) => {
+      const delay = index * 100; // Stagger animations
+      setTimeout(() => {
+        this.scrollAnimation.observeElement(element, ScrollAnimationService.ANIMATIONS.FADE_IN);
+      }, delay);
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Cleanup animations
+    this.scrollAnimation.destroy();
+  }
 }
