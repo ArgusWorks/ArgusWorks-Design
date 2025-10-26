@@ -1,0 +1,93 @@
+<div class="case-study-container">
+  <header class="case-study-header">
+    <div class="breadcrumb">
+      <a routerLink="/">Home</a> / <span>Case Studies</span> / <span class="current">Refined Cravings</span>
+    </div>
+    <h1>Refined Cravings Restaurant</h1>
+    <p class="subtitle">Digital Transformation Success Story</p>
+    
+    <div class="results-overview">
+      <div class="result-card">
+        <div class="result-number">{{ businessResults.bookingIncrease }}</div>
+        <div class="result-label">Booking Increase</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">{{ businessResults.orderIncrease }}</div>
+        <div class="result-label">Online Orders</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">{{ businessResults.revenue }}</div>
+        <div class="result-label">Monthly Revenue</div>
+      </div>
+      <div class="result-card">
+        <div class="result-number">{{ businessResults.customerRetention }}</div>
+        <div class="result-label">Customer Retention</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="challenge-solution">
+    <div class="section-half">
+      <h2>The Challenge</h2>
+      <p>Refined Cravings, a family-owned restaurant in downtown Austin, was struggling to maintain business during the COVID-19 pandemic. With limited digital presence and no online ordering system, they were losing customers to competitors.</p>
+      <ul class="challenge-list">
+        <li *ngFor="let challenge of challenges">{{ challenge }}</li>
+      </ul>
+    </div>
+    
+    <div class="section-half">
+      <h2>Our Solution</h2>
+      <p>We developed a comprehensive digital strategy that transformed their business model and dramatically increased their customer reach and revenue.</p>
+      <ul class="solution-list">
+        <li *ngFor="let solution of solutions">{{ solution }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="process-timeline">
+    <h2>Project Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let step of processSteps">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <h3>{{ step.phase }}</h3>
+          <div class="duration">{{ step.duration }}</div>
+          <ul>
+            <li *ngFor="let activity of step.activities">{{ activity }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="technologies">
+    <h2>Technologies Used</h2>
+    <div class="tech-grid">
+      <div class="tech-item" *ngFor="let tech of technologies">
+        {{ tech }}
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial" *ngFor="let testimonial of testimonials">
+        <blockquote>"{{ testimonial.quote }}"</blockquote>
+        <cite>
+          <strong>{{ testimonial.author }}</strong><br>
+          {{ testimonial.title }}
+        </cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Transform Your Business?</h2>
+    <p>See how we can help your restaurant or local business achieve similar results.</p>
+    <div class="cta-buttons">
+      <a routerLink="/demos/refined-cravings" class="btn btn-primary">View Live Demo</a>
+      <a routerLink="/about" class="btn btn-secondary">Contact Us</a>
+    </div>
+  </section>
+</div>

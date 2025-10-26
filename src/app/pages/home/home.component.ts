@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -16,10 +17,10 @@ export class HomeComponent {
       logo: '🧀',
       name: 'Refined Cravings',
       description: 'Refined Cravings needed a sophisticated online presence that matched their premium charcuterie offerings. We created an elegant website featuring stunning product galleries, streamlined catering inquiries, and a booking system that converted browsers into customers. The result? A 250% increase in catering bookings within the first three months.',
-      readMoreLink: '/client-proposals/refined-cravings/proposal.md',
+      readMoreLink: '/case-studies/refined-cravings',
       gradient: 'linear-gradient(135deg, #8b4513, #d2b48c)',
       previewIcon: '🧀🍯',
-      demoLink: '/client-proposals/refined-cravings/index.html',
+      demoLink: '/demos/refined-cravings',
       linkText: 'View Live Site'
     },
     {
@@ -81,8 +82,5 @@ export class HomeComponent {
     'lineHeight': '1.6' 
   };
 
-  openDemo(event: Event, url: string): void {
-    event.preventDefault();
-    window.open(url, '_blank');
-  }
+
 }

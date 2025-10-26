@@ -163,7 +163,7 @@
           <span class="client-name">{{ story.name }}</span>
         </div>
         <p class="story-description">{{ story.description }}</p>
-        <a [href]="story.readMoreLink" class="story-read-more">Read more</a>
+        <a [routerLink]="story.readMoreLink" class="story-read-more">Read more</a>
       </div>
       <div class="story-preview">
         <div class="preview-container">
@@ -171,9 +171,8 @@
             <div class="preview-overlay">{{ story.previewIcon }}</div>
           </div>
           <a 
-            [href]="story.demoLink" 
-            class="preview-link" 
-            (click)="openDemo($event, story.demoLink)"
+            [routerLink]="story.demoLink" 
+            class="preview-link"
           >
             {{ story.linkText }}
           </a>

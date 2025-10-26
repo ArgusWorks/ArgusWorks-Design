@@ -1,0 +1,84 @@
+<div class="demo-container">
+  <header class="demo-header">
+    <div class="breadcrumb">
+      <a routerLink="/">Home</a> / <span>Demos</span> / <span class="current">Refined Cravings</span>
+    </div>
+    <h1>Refined Cravings - Live Demo</h1>
+    <p class="subtitle">Interactive preview of our restaurant website solution</p>
+  </header>
+
+  <div class="demo-content">
+    <div class="demo-info">
+      <div class="info-section">
+        <h2>Demo Features</h2>
+        <ul class="feature-list">
+          <li *ngFor="let feature of demoFeatures" class="feature-item">
+            {{ feature }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h2>Business Impact</h2>
+        <div class="impact-grid">
+          <div *ngFor="let impact of businessImpact" class="impact-item">
+            <div class="impact-value">{{ impact.value }}</div>
+            <div class="impact-label">{{ impact.metric }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h2>Demo Navigation Tips</h2>
+        <div class="tips">
+          <p>🖱️ Click around to explore the menu and ordering system</p>
+          <p>📱 Try resizing your browser to see mobile responsiveness</p>
+          <p>🍽️ Browse different menu categories and items</p>
+          <p>🛒 Test the add-to-cart functionality</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-frame-container">
+      <div class="loading-overlay" [class.hidden]="!isLoading">
+        <div class="loading-spinner"></div>
+        <p>Loading demo website...</p>
+      </div>
+      
+      <iframe 
+        [src]="demoUrl" 
+        class="demo-frame"
+        (load)="onFrameLoad()"
+        title="Refined Cravings Restaurant Demo">
+      </iframe>
+      
+      <div class="demo-placeholder">
+        <div class="placeholder-content">
+          <h3>🍽️ Refined Cravings Restaurant</h3>
+          <p>Interactive restaurant website demo</p>
+          <div class="placeholder-features">
+            <span class="feature-tag">Online Ordering</span>
+            <span class="feature-tag">Mobile Responsive</span>
+            <span class="feature-tag">Menu Management</span>
+            <span class="feature-tag">Customer Reviews</span>
+          </div>
+          <p class="demo-note">
+            <strong>Note:</strong> This is a demonstration placeholder. 
+            In the live version, you would see the actual restaurant website 
+            with full functionality including menu browsing, online ordering, 
+            and customer interaction features.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Impressed by What You See?</h2>
+    <p>This is just one example of how we transform local businesses with modern web solutions.</p>
+    <div class="cta-buttons">
+      <a routerLink="/case-studies/refined-cravings" class="btn btn-primary">View Full Case Study</a>
+      <a routerLink="/about" class="btn btn-secondary">Start Your Project</a>
+    </div>
+  </div>
+</div>
