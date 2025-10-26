@@ -4,9 +4,25 @@
  * Inspired by Boarderie.com's user experience patterns
  */
 
+// Polyfill for Element.matches (for older browsers)
+if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+}
+
+// Debug logging
+console.log('Refined Cravings JS loaded. DOM state:', document.readyState);
+console.log('localStorage available:', typeof Storage !== "undefined");
+
 class RefinedCravings {
     constructor() {
-        this.cart = JSON.parse(localStorage.getItem('refinedCravingsCart')) || [];
+        // Initialize cart with error handling for localStorage
+        try {
+            this.cart = JSON.parse(localStorage.getItem('refinedCravingsCart')) || [];
+        } catch (error) {
+            console.warn('localStorage not available or corrupted, using empty cart:', error);
+            this.cart = [];
+        }
+        
         this.currentProduct = null;
         this.isLoading = false;
         
@@ -23,40 +39,97 @@ class RefinedCravings {
     }
 
     setup() {
+        console.log('Setting up application...');
         this.setupEventListeners();
+        this.setupDirectButtonHandlers(); // Fallback for event delegation issues
         this.updateCartDisplay();
         this.initializeAnimations();
         this.setupMobileMenu();
         this.setupProductInteractions();
         this.setupBookingForm();
+        console.log('Application setup complete');
+    }
+
+    // Direct button handlers as fallback
+    setupDirectButtonHandlers() {
+        console.log('Setting up direct button handlers...');
+        
+        // Add to cart buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        console.log('Found add-to-cart buttons:', addToCartButtons.length);
+        
+        addToCartButtons.forEach((button, index) => {
+            console.log(`Setting up button ${index}:`, button);
+            button.addEventListener('click', (e) => {
+                console.log('Direct click handler triggered');
+                e.preventDefault();
+                e.stopPropagation();
+                this.handleAddToCart(button);
+            });
+        });
+
+        // Cart toggle buttons
+        const cartToggleButtons = document.querySelectorAll('.cart-toggle');
+        cartToggleButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleCart();
+            });
+        });
     }
 
     // ===== EVENT LISTENERS =====
     setupEventListeners() {
-        // Cart functionality
+        console.log('Setting up event listeners...');
+        
+        // Cart functionality with better error handling
         document.addEventListener('click', (e) => {
-            if (e.target.matches('.add-to-cart, .add-to-cart *')) {
-                const button = e.target.closest('.add-to-cart');
-                if (button) {
+            try {
+                // Add to Cart buttons
+                if (e.target && (e.target.classList.contains('add-to-cart') || e.target.closest('.add-to-cart'))) {
+                    const button = e.target.closest('.add-to-cart') || e.target;
+                    console.log('Add to cart clicked:', button);
                     e.preventDefault();
                     e.stopPropagation(); // Prevent card navigation
                     this.handleAddToCart(button);
+                    return;
                 }
+                
+                // Fallback for older browser compatibility
+                if (e.target.matches && e.target.matches('.add-to-cart, .add-to-cart *')) {
+                    const button = e.target.closest('.add-to-cart');
+                    if (button) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.handleAddToCart(button);
+                    }
+                }
+            } catch (error) {
+                console.error('Error in add-to-cart handler:', error);
             }
 
             // Remove from cart
-            if (e.target.matches('.remove-from-cart, .remove-from-cart *')) {
-                const button = e.target.closest('.remove-from-cart');
-                if (button) {
+            try {
+                if (e.target && (e.target.classList.contains('remove-from-cart') || e.target.closest('.remove-from-cart'))) {
+                    const button = e.target.closest('.remove-from-cart') || e.target;
                     e.preventDefault();
                     this.removeFromCart(button.dataset.productId);
+                    return;
                 }
+            } catch (error) {
+                console.error('Error in remove-from-cart handler:', error);
             }
 
             // Cart toggle
-            if (e.target.matches('.cart-toggle, .cart-toggle *')) {
-                e.preventDefault();
-                this.toggleCart();
+            try {
+                if (e.target && (e.target.classList.contains('cart-toggle') || e.target.closest('.cart-toggle'))) {
+                    e.preventDefault();
+                    console.log('Cart toggle clicked');
+                    this.toggleCart();
+                    return;
+                }
+            } catch (error) {
+                console.error('Error in cart-toggle handler:', error);
             }
 
             // Product card navigation
@@ -92,22 +165,36 @@ class RefinedCravings {
 
     // ===== SHOPPING CART =====
     handleAddToCart(button) {
-        if (this.isLoading) return;
+        console.log('handleAddToCart called with button:', button);
+        
+        if (this.isLoading) {
+            console.log('Loading in progress, ignoring click');
+            return;
+        }
 
         let product;
         const productCard = button.closest('.product-card');
+        console.log('Product card found:', productCard);
         
         if (productCard) {
             // Handle product cards on main page
+            console.log('Extracting product data from card');
             product = this.extractProductData(productCard);
         } else if (button.dataset.productName) {
             // Handle product page buttons with data attributes
+            console.log('Extracting product data from button attributes');
             product = this.extractProductDataFromButton(button);
         } else {
+            console.log('No product data found, cannot add to cart');
             return; // No valid product data found
         }
 
-        if (!product) return;
+        if (!product) {
+            console.log('Product extraction failed:', product);
+            return;
+        }
+        
+        console.log('Product to add:', product);
 
         this.isLoading = true;
         this.showLoadingState(button);
@@ -250,23 +337,36 @@ class RefinedCravings {
     }
 
     saveCart() {
-        localStorage.setItem('refinedCravingsCart', JSON.stringify(this.cart));
+        try {
+            localStorage.setItem('refinedCravingsCart', JSON.stringify(this.cart));
+        } catch (error) {
+            console.warn('Failed to save cart to localStorage:', error);
+        }
     }
 
     // ===== UI UPDATES =====
     updateCartDisplay() {
-        this.updateCartBadge();
-        this.updateCartDrawer();
+        try {
+            this.updateCartBadge();
+            this.updateCartDrawer();
+        } catch (error) {
+            console.error('Error updating cart display:', error);
+        }
     }
 
     updateCartBadge() {
-        const badges = document.querySelectorAll('.cart-badge');
-        const count = this.getCartItemCount();
-        
-        badges.forEach(badge => {
-            badge.textContent = count;
-            badge.style.display = count > 0 ? 'flex' : 'none';
-        });
+        try {
+            const badges = document.querySelectorAll('.cart-badge');
+            const count = this.getCartItemCount();
+            console.log('Updating cart badges. Count:', count, 'Badges found:', badges.length);
+            
+            badges.forEach(badge => {
+                badge.textContent = count;
+                badge.style.display = count > 0 ? 'flex' : 'none';
+            });
+        } catch (error) {
+            console.error('Error updating cart badge:', error);
+        }
     }
 
     updateCartDrawer() {
@@ -965,7 +1065,42 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
 
-// Initialize the application
-const app = new RefinedCravings();
-// Make app globally accessible for onclick handlers
-window.app = app;
+// Initialize the application with error handling
+try {
+    console.log('Initializing Refined Cravings app...');
+    const app = new RefinedCravings();
+    // Make app globally accessible for onclick handlers
+    window.app = app;
+    
+    // Add test function for debugging
+    window.testCart = () => {
+        console.log('Testing cart functionality...');
+        console.log('Current cart:', app.cart);
+        console.log('Cart item count:', app.getCartItemCount());
+        
+        // Test adding item
+        const testProduct = {
+            id: 'test-123',
+            title: 'Test Product',
+            category: 'Test',
+            price: 10.00,
+            quantity: 1,
+            image: null
+        };
+        app.addToCart(testProduct);
+        console.log('Added test product. New cart:', app.cart);
+        console.log('New cart count:', app.getCartItemCount());
+    };
+    
+    console.log('App initialized successfully. Use testCart() to test cart functionality.');
+} catch (error) {
+    console.error('Failed to initialize app:', error);
+    
+    // Fallback: Create a minimal app object for onclick handlers
+    window.app = {
+        addToCart: () => console.log('Cart functionality unavailable'),
+        increaseQuantity: () => console.log('Quantity controls unavailable'),
+        decreaseQuantity: () => console.log('Quantity controls unavailable'),
+        toggleCart: () => console.log('Cart toggle unavailable')
+    };
+}
