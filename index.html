@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Argus Web Designs - Professional Web Design & Development | www.arguswebdesigns.com</title>
     <meta name="description" content="Argus Web Designs creates stunning, results-driven websites for businesses. Professional web design, e-commerce development, and digital marketing services. Transform your online presence today.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -14,7 +18,7 @@
         <div class="nav-container">
             <a href="#home" class="logo">
                 <img src="assets/images/IconOnly_Transparent_NoBuffer.png" alt="Argus Web Designs" height="40">
-                <span style="margin-left: 0.5rem; color: var(--text-primary)">Argus Web Designs</span>
+                <span style="margin-left: 0.5rem; color: var(--text-primary); font-family: var(--font-brand); font-size: 1.5rem; font-weight: 400;">arguswebdesigns</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -26,33 +30,47 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1>Transform Your Business<br>with Expert Web Design</h1>
-                <p class="hero-subtitle">
-                    Argus Web Designs crafts powerful, conversion-focused websites that elevate your brand and drive real business growth. 
-                    From stunning design to seamless functionality, we deliver web solutions that work as hard as you do.
-                </p>
-                <div class="hero-stats" style="margin: 2rem 0; display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-color);">100+</div>
-                        <div style="font-size: 0.9rem; opacity: 0.9;">Websites Launched</div>
+                <!-- Left Column: Text Content -->
+                <div class="hero-text-column">
+                    <h1 class="hero-title">Transform Your Business<br>with Expert Web Design</h1>
+                    <p class="hero-subtitle">
+                        Argus Web Designs crafts powerful, conversion-focused websites that elevate your brand and drive real business growth. 
+                        From stunning design to seamless functionality, we deliver web solutions that work as hard as you do.
+                    </p>
+                    
+                    <!-- Hero Stats -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Websites Launched</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="stat-number">5⭐</div>
+                            <div class="stat-label">Average Rating</div>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-color);">99%</div>
-                        <div style="font-size: 0.9rem; opacity: 0.9;">Client Satisfaction</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-color);">5⭐</div>
-                        <div style="font-size: 0.9rem; opacity: 0.9;">Average Rating</div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <a href="#portfolio" class="btn-primary">
+                            🚀 See Our Work
+                        </a>
+                        <a href="#contact" class="btn-secondary">Get Free Quote</a>
                     </div>
                 </div>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn-primary">
-                        � See Our Work
-                    </a>
-                    <a href="#contact" class="btn-secondary">Get Free Quote</a>
+                
+                <!-- Right Column: Image -->
+                <div class="hero-image-column">
+                    <div class="hero-image-container">
+                        <img src="assets/images/hero_image.jpg" alt="Professional Web Design" class="hero-image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -85,9 +103,9 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-            <div class="text-center mb-12">
+            <div class="section-header">
                 <h2>Web Design Services That Deliver Results</h2>
-                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                <p>
                     At Argus Web Designs, we don't just create beautiful websites – we build digital experiences that convert visitors into customers and help your business thrive online.
                 </p>
             </div>
@@ -159,77 +177,96 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <div class="text-center mb-12">
-                <h2>Our Portfolio: Real Results for Real Businesses</h2>
-                <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-                    Discover how Argus Web Designs has helped businesses across various industries establish powerful online presences that drive growth and success.
+            <div class="section-header">
+                <h2>Customer Stories</h2>
+                <p>
+                    See how game-changing local businesses are leveling up their online presence with Argus Web Designs.
                 </p>
             </div>
             
-            <div class="portfolio-grid">
-                <!-- Refined Cravings Project -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8b4513, #d2b48c);">
-                        🧀🍯
-                        <div class="portfolio-overlay">Premium Charcuterie Business Website</div>
+            <!-- Refined Cravings Story -->
+            <div class="customer-story">
+                <div class="story-content">
+                    <div class="story-category">Food & Catering</div>
+                    <h3 class="story-title">A premium charcuterie catering business designed to elevate special occasions</h3>
+                    <div class="story-client">
+                        <div class="client-logo">🧀</div>
+                        <span class="client-name">Refined Cravings</span>
                     </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-category">Food & Catering</div>
-                        <h3 class="portfolio-title">Refined Cravings</h3>
-                        <p class="portfolio-description">
-                            Elegant website for a premium charcuterie catering business featuring service showcase, 
-                            gallery, and integrated booking system.
-                        </p>
-                        <div class="portfolio-links">
-                            <a href="/client-proposals/refined-cravings/" class="btn-view" onclick="handleDemoClick(event, 'client-proposals/refined-cravings/index.html')">View Site</a>
-                            <a href="client-proposals/refined-cravings/PROPOSAL.md" class="btn-case-study">Case Study</a>
+                    <p class="story-description">
+                        Refined Cravings needed a sophisticated online presence that matched their premium charcuterie offerings. 
+                        We created an elegant website featuring stunning product galleries, streamlined catering inquiries, 
+                        and a booking system that converted browsers into customers. The result? A 250% increase in catering 
+                        bookings within the first three months.
+                    </p>
+                    <a href="client-proposals/refined-cravings/proposal.md" class="story-read-more">Read more</a>
+                </div>
+                <div class="story-preview">
+                    <div class="preview-container">
+                        <div class="preview-image" style="background: linear-gradient(135deg, #8b4513, #d2b48c);">
+                            <div class="preview-overlay">🧀🍯</div>
                         </div>
+                        <a href="/client-proposals/refined-cravings/" class="preview-link" onclick="handleDemoClick(event, 'client-proposals/refined-cravings/index.html')">View Live Site</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Cafe Cultivate Project -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #2F5233, #D4A574);">
-                        ☕🥐
-                        <div class="portfolio-overlay">Coffee Shop + Event Space</div>
+            <!-- Cafe Cultivate Story -->
+            <div class="customer-story">
+                <div class="story-content">
+                    <div class="story-category">Restaurant & Events</div>
+                    <h3 class="story-title">A coffee shop and micro event space designed to build community connections</h3>
+                    <div class="story-client">
+                        <div class="client-logo">☕</div>
+                        <span class="client-name">Cafe Cultivate</span>
                     </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-category">Restaurant & Events</div>
-                        <h3 class="portfolio-title">Cafe Cultivate</h3>
-                        <p class="portfolio-description">
-                            Modern coffee shop website with micro event space booking system, Instagram integration, 
-                            and grand opening promotional features.
-                        </p>
-                        <div class="portfolio-links">
-                            <a href="/client-proposals/cafe-cultivate/" class="btn-view" onclick="handleDemoClick(event, 'client-proposals/cafe-cultivate/index.html')">View Site</a>
-                            <a href="client-proposals/cafe-cultivate/MICRO_EVENTS_INSTAGRAM_FEATURES.md" class="btn-case-study">Features</a>
+                    <p class="story-description">
+                        Cafe Cultivate wanted to launch as more than just a coffee shop - they envisioned a community hub 
+                        for micro events and gatherings. We built them a dynamic website with integrated event booking, 
+                        Instagram feed integration, and grand opening promotional features. Their launch exceeded expectations 
+                        with fully booked events for their first month.
+                    </p>
+                    <a href="client-proposals/cafe-cultivate/MICRO_EVENTS_INSTAGRAM_FEATURES.md" class="story-read-more">Read more</a>
+                </div>
+                <div class="story-preview">
+                    <div class="preview-container">
+                        <div class="preview-image" style="background: linear-gradient(135deg, #2F5233, #D4A574);">
+                            <div class="preview-overlay">☕🥐</div>
                         </div>
+                        <a href="/client-proposals/cafe-cultivate/" class="preview-link" onclick="handleDemoClick(event, 'client-proposals/cafe-cultivate/index.html')">View Live Site</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Bella Vista Restaurant -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #8b0000, #cc3333);">
-                        🍝🍷
-                        <div class="portfolio-overlay">Italian Restaurant Template</div>
+            <!-- Bella Vista Story -->
+            <div class="customer-story">
+                <div class="story-content">
+                    <div class="story-category">Restaurant Template</div>
+                    <h3 class="story-title">An elegant Italian restaurant template designed for authentic dining experiences</h3>
+                    <div class="story-client">
+                        <div class="client-logo">🍝</div>
+                        <span class="client-name">Bella Vista Restaurant</span>
                     </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-category">Restaurant Template</div>
-                        <h3 class="portfolio-title">Bella Vista Restaurant</h3>
-                        <p class="portfolio-description">
-                            Elegant restaurant template featuring menu showcase, reservation system, 
-                            and customer review integration.
-                        </p>
-                        <div class="portfolio-links">
-                            <a href="/demos/bella-vista-restaurant/" class="btn-view" onclick="handleDemoClick(event, 'demos/bella-vista-restaurant/index.html')">View Demo</a>
-                            <a href="templates/local-business/README.md" class="btn-case-study">Documentation</a>
+                    <p class="story-description">
+                        Our restaurant template showcases the perfect blend of traditional Italian charm and modern web design. 
+                        Featuring interactive menus, reservation systems, and customer testimonial integration, this template 
+                        helps restaurant owners create an immersive online experience that drives foot traffic and builds 
+                        customer loyalty before guests even walk through the door.
+                    </p>
+                    <a href="templates/local-business/README.md" class="story-read-more">Read more</a>
+                </div>
+                <div class="story-preview">
+                    <div class="preview-container">
+                        <div class="preview-image" style="background: linear-gradient(135deg, #8b0000, #cc3333);">
+                            <div class="preview-overlay">🍝🍷</div>
                         </div>
+                        <a href="/demos/bella-vista-restaurant/" class="preview-link" onclick="handleDemoClick(event, 'demos/bella-vista-restaurant/index.html')">View Demo</a>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="#contact" class="btn-primary">Start Your Project Today</a>
+            <div class="text-center" style="margin-top: 4rem;">
+                <a href="#contact" class="btn-primary">Start Your Success Story</a>
             </div>
         </div>
     </section>
@@ -237,9 +274,9 @@
     <!-- Testimonials Section -->
     <section class="section">
         <div class="container">
-            <div class="text-center mb-12">
+            <div class="section-header">
                 <h2>What Our Clients Say</h2>
-                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                <p>
                     Don't just take our word for it. Here's what business owners say about working with Argus Web Designs.
                 </p>
             </div>
@@ -276,38 +313,120 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="cta-section">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p>Let's discuss your project and create a website that drives real results for your business.</p>
-            
-            <div style="max-width: 500px; margin: 0 auto;">
-                <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 1rem; backdrop-filter: blur(10px);">
-                    <h3 style="margin-bottom: 2rem; color: white;">Get Your Free Consultation</h3>
-                    
-                    <div style="text-align: left; margin-bottom: 2rem;">
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📧 Email</h4>
-                            <a href="mailto:info@arguswebdesigns.com" style="color: white; text-decoration: none; font-size: 1.1rem;">info@arguswebdesigns.com</a>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📱 Phone</h4>
-                            <a href="tel:+1234567890" style="color: white; text-decoration: none; font-size: 1.1rem;">(123) 456-7890</a>
-                        </div>
-                        <div>
-                            <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">⏱️ Response Time</h4>
-                            <p style="color: white; opacity: 0.9; margin: 0;">We typically respond within 24 hours</p>
-                        </div>
+            <div class="contact-content">
+                <!-- Left Column: Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-header">
+                        <h2>Let's take your business to the next level.</h2>
+                        <p>Get in touch with us to see how great design can help you reach your business goals.</p>
                     </div>
                     
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="mailto:info@arguswebdesigns.com" class="btn-primary" style="flex: 1; justify-content: center;">
-                            Send Email
-                        </a>
-                        <a href="tel:+1234567890" class="btn-secondary" style="flex: 1; justify-content: center;">
-                            Call Now
-                        </a>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:info@arguswebdesigns.com">info@arguswebdesigns.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">⏱️</div>
+                            <div>
+                                <h4>Response Time</h4>
+                                <p>We typically respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div>
+                                <h4>Website</h4>
+                                <p>www.arguswebdesigns.com</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                
+                <!-- Right Column: Contact Form -->
+                <div class="contact-form-container">
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <input type="hidden" name="form-name" value="contact" />
+                        
+                        <!-- Honeypot field for spam protection -->
+                        <p style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div class="form-header">
+                            <h3>Start Your Project</h3>
+                            <p>Tell us about your business and project goals. We'll get back to you with a personalized proposal.</p>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="projectType">Project Type *</label>
+                            <select id="projectType" name="projectType" required>
+                                <option value="">Select a service</option>
+                                <option value="new-website">New Website Design</option>
+                                <option value="redesign">Website Redesign</option>
+                                <option value="ecommerce">E-commerce Development</option>
+                                <option value="seo-marketing">SEO & Digital Marketing</option>
+                                <option value="maintenance">Website Maintenance</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-5k">Under $5,000</option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-plus">$25,000+</option>
+                                <option value="discuss">Let's discuss</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your business, project goals, timeline, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit-btn">Send Project Details</button>
+                        
+                        <div class="form-footer">
+                            <p>By submitting this form, you agree to our privacy policy. We'll only use your information to respond to your inquiry.</p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
