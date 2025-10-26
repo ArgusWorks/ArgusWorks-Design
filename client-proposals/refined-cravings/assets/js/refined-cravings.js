@@ -406,9 +406,20 @@ class RefinedCravings {
         const bookingForm = document.querySelector('.booking-form');
         if (!bookingForm) return;
 
+        // Check for success parameter in URL
+        this.checkFormSuccess();
+
+        // For Netlify Forms, we don't prevent default - let it submit naturally
         bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleBookingSubmission(bookingForm);
+            // Only prevent if validation fails
+            if (!this.validateForm(bookingForm)) {
+                e.preventDefault();
+                return;
+            }
+            
+            // Show loading state but let form submit to Netlify
+            const submitBtn = bookingForm.querySelector('button[type="submit"]');
+            this.showFormLoadingState(submitBtn);
         });
 
         // Form validation
@@ -417,6 +428,46 @@ class RefinedCravings {
             input.addEventListener('blur', () => this.validateField(input));
             input.addEventListener('input', () => this.clearFieldError(input));
         });
+    }
+
+    checkFormSuccess() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            this.showFormSuccessMessage();
+            // Clean up URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    }
+
+    showFormSuccessMessage() {
+        const form = document.querySelector('.booking-form');
+        if (!form) return;
+
+        const successMessage = document.createElement('div');
+        successMessage.className = 'form-success-message';
+        successMessage.innerHTML = `
+            <div style="background: var(--brand-forest); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                <h3 style="color: white; margin-bottom: 1rem;">🎉 Booking Request Sent!</h3>
+                <p>Thank you for your interest! We've received your booking request and will respond within 24 hours with a custom quote and availability confirmation.</p>
+            </div>
+        `;
+        
+        form.parentNode.insertBefore(successMessage, form);
+        form.style.display = 'none';
+    }
+
+    showFormLoadingState(button) {
+        const originalText = button.textContent;
+        button.textContent = 'Sending Request...';
+        button.disabled = true;
+        button.style.opacity = '0.7';
+        
+        // Reset after timeout (Netlify should redirect)
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.disabled = false;
+            button.style.opacity = '1';
+        }, 5000);
     }
 
     handleBookingSubmission(form) {
