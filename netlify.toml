@@ -1,15 +1,15 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "ng build --configuration production"
 
 [build.environment]
   NODE_VERSION = "18"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[context.production.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+# SPA redirect for Angular Router (must be last)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"

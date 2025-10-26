@@ -1,0 +1,335 @@
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <!-- Left Column: Text Content -->
+      <div class="hero-text-column">
+        <h1 class="hero-title">Transform Your Business<br />with Expert Web Design</h1>
+        <p class="hero-subtitle">
+          Argus Web Designs crafts powerful, conversion-focused websites that elevate your brand and drive real business growth. 
+          From stunning design to seamless functionality, we deliver web solutions that work as hard as you do.
+        </p>
+        
+        <!-- Hero Stats -->
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Websites Launched</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number">5⭐</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn-primary">
+            🚀 See Our Work
+          </a>
+          <a href="#contact" class="btn-secondary">Get Free Quote</a>
+        </div>
+      </div>
+      
+      <!-- Right Column: Image -->
+      <div class="hero-image-column">
+        <div class="hero-image-container">
+          <img src="/assets/images/hero_image.jpg" alt="Professional Web Design" class="hero-image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Credibility Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24hr</span>
+        <span class="stat-label">Response Time</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Mobile Responsive</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">SSL</span>
+        <span class="stat-label">Security Included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Web Design Services That Deliver Results</h2>
+      <p>
+        At Argus Web Designs, we don't just create beautiful websites – we build digital experiences that convert visitors into customers and help your business thrive online.
+      </p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Web Design -->
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Custom Web Design</h3>
+        <p>Stunning, conversion-focused websites that capture your brand essence and turn visitors into loyal customers.</p>
+        <ul class="service-features">
+          <li>Brand-aligned custom design</li>
+          <li>Mobile-first responsive layouts</li>
+          <li>Conversion optimization</li>
+          <li>Lightning-fast loading speeds</li>
+          <li>User experience (UX) focused</li>
+          <li>Cross-browser compatibility</li>
+        </ul>
+      </div>
+
+      <!-- E-commerce Development -->
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>E-commerce Development</h3>
+        <p>Powerful online stores that provide seamless shopping experiences and maximize your revenue potential.</p>
+        <ul class="service-features">
+          <li>Secure payment processing</li>
+          <li>Advanced inventory management</li>
+          <li>Customer account systems</li>
+          <li>Order tracking & notifications</li>
+          <li>Abandoned cart recovery</li>
+          <li>Sales analytics & reporting</li>
+        </ul>
+      </div>
+
+      <!-- SEO & Digital Marketing -->
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>SEO & Digital Marketing</h3>
+        <p>Comprehensive digital strategies that boost your online visibility and drive qualified traffic to your website.</p>
+        <ul class="service-features">
+          <li>Technical SEO optimization</li>
+          <li>Local SEO for businesses</li>
+          <li>Google Ads campaign management</li>
+          <li>Social media integration</li>
+          <li>Content marketing strategy</li>
+          <li>Performance analytics & reporting</li>
+        </ul>
+      </div>
+
+      <!-- Website Maintenance & Support -->
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Maintenance & Support</h3>
+        <p>Ongoing website care and support to keep your site secure, updated, and performing at its best.</p>
+        <ul class="service-features">
+          <li>Security monitoring & updates</li>
+          <li>Performance optimization</li>
+          <li>Content updates & changes</li>
+          <li>Backup & disaster recovery</li>
+          <li>Technical support & troubleshooting</li>
+          <li>Monthly performance reports</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Customer Stories</h2>
+      <p>
+        See how game-changing local businesses are leveling up their online presence with Argus Web Designs.
+      </p>
+    </div>
+    
+    <!-- Customer Stories -->
+    <div class="customer-story" *ngFor="let story of customerStories">
+      <div class="story-content">
+        <div class="story-category">{{ story.category }}</div>
+        <h3 class="story-title">{{ story.title }}</h3>
+        <div class="story-client">
+          <div class="client-logo">{{ story.logo }}</div>
+          <span class="client-name">{{ story.name }}</span>
+        </div>
+        <p class="story-description">{{ story.description }}</p>
+        <a [href]="story.readMoreLink" class="story-read-more">Read more</a>
+      </div>
+      <div class="story-preview">
+        <div class="preview-container">
+          <div class="preview-image" [style.background]="story.gradient">
+            <div class="preview-overlay">{{ story.previewIcon }}</div>
+          </div>
+          <a 
+            [href]="story.demoLink" 
+            class="preview-link" 
+            (click)="openDemo($event, story.demoLink)"
+          >
+            {{ story.linkText }}
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center" style="margin-top: 4rem;">
+      <a href="#contact" class="btn-primary">Start Your Success Story</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Our Clients Say</h2>
+      <p>
+        Don't just take our word for it. Here's what business owners say about working with Argus Web Designs.
+      </p>
+    </div>
+    
+    <div class="grid grid-3" style="gap: 2rem;">
+      <div *ngFor="let testimonial of testimonials" [ngStyle]="testimonialStyle">
+        <div style="color: var(--accent-color); font-size: 2rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+        <p [ngStyle]="testimonialTextStyle">{{ testimonial.text }}</p>
+        <div style="font-weight: 600; color: var(--primary-color);">{{ testimonial.author }}</div>
+        <div style="font-size: 0.9rem; color: var(--text-secondary);">{{ testimonial.title }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-content">
+      <!-- Left Column: Contact Info -->
+      <div class="contact-info">
+        <div class="contact-header">
+          <h2>Let's take your business to the next level.</h2>
+          <p>Get in touch with us to see how great design can help you reach your business goals.</p>
+        </div>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@arguswebdesigns.com">info@arguswebdesigns.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">⏱️</div>
+            <div>
+              <h4>Response Time</h4>
+              <p>We typically respond within 24 hours</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <h4>Website</h4>
+              <p>www.arguswebdesigns.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column: Contact Form -->
+      <div class="contact-form-container">
+        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          
+          <!-- Honeypot field for spam protection -->
+          <p style="display: none;">
+            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          
+          <div class="form-header">
+            <h3>Start Your Project</h3>
+            <p>Tell us about your business and project goals. We'll get back to you with a personalized proposal.</p>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" required />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" />
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          
+          <div class="form-group">
+            <label for="projectType">Project Type *</label>
+            <select id="projectType" name="projectType" required>
+              <option value="">Select a service</option>
+              <option value="new-website">New Website Design</option>
+              <option value="redesign">Website Redesign</option>
+              <option value="ecommerce">E-commerce Development</option>
+              <option value="seo-marketing">SEO & Digital Marketing</option>
+              <option value="maintenance">Website Maintenance</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="budget">Project Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select budget range</option>
+              <option value="under-5k">Under $5,000</option>
+              <option value="5k-10k">$5,000 - $10,000</option>
+              <option value="10k-25k">$10,000 - $25,000</option>
+              <option value="25k-plus">$25,000+</option>
+              <option value="discuss">Let's discuss</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Project Details *</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="4" 
+              placeholder="Tell us about your business, project goals, timeline, and any specific requirements..." 
+              required
+            ></textarea>
+          </div>
+          
+          <button type="submit" class="form-submit-btn">Send Project Details</button>
+          
+          <div class="form-footer">
+            <p>By submitting this form, you agree to our privacy policy. We'll only use your information to respond to your inquiry.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

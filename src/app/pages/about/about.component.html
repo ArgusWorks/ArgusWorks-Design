@@ -1,0 +1,100 @@
+<!-- About Section -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-header">
+      <h1>About Argus Web Designs</h1>
+      <p>
+        We're passionate about helping businesses succeed online through thoughtful design, strategic development, and genuine partnerships.
+      </p>
+    </div>
+    
+    <div class="about-content">
+      <!-- Story & Mission -->
+      <div class="about-story">
+        <div class="about-text">
+          <h2>Our Story</h2>
+          <p>
+            Founded with a mission to democratize professional web design for small and medium businesses, 
+            Argus Web Designs bridges the gap between enterprise-level digital solutions and accessible, 
+            results-driven web development.
+          </p>
+          <p>
+            We believe every business deserves a website that not only looks professional but actually 
+            works to grow their customer base, increase revenue, and build lasting relationships with their audience.
+          </p>
+          
+          <h3>Our Approach</h3>
+          <p>
+            We don't just build websites – we craft digital experiences that tell your story, engage your 
+            audience, and drive measurable business results. Every project starts with understanding your 
+            unique goals, challenges, and vision for success.
+          </p>
+        </div>
+        
+        <div class="about-image">
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            alt="Professional Web Development Team" 
+            class="about-photo" 
+          />
+          <div class="about-stats">
+            <div class="stat-box">
+              <span class="stat-value">50+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-value">98%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values & Principles -->
+      <div class="values-section">
+        <h2>What Drives Us</h2>
+        <div class="values-grid">
+          <div class="value-card" *ngFor="let value of values">
+            <div class="value-icon">{{ value.icon }}</div>
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team & Expertise -->
+      <div class="expertise-section">
+        <h2>Our Expertise</h2>
+        <div class="expertise-grid">
+          <div class="expertise-area">
+            <h3>Technical Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag" *ngFor="let skill of technicalSkills">{{ skill }}</span>
+            </div>
+          </div>
+          
+          <div class="expertise-area">
+            <h3>Industry Experience</h3>
+            <div class="industry-list">
+              <div class="industry-item" *ngFor="let industry of industries">
+                {{ industry.icon }} {{ industry.name }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="about-cta">
+        <h2>Ready to Transform Your Online Presence?</h2>
+        <p>
+          Let's discuss how we can help your business thrive online. Every great website starts with a conversation.
+        </p>
+        <div class="cta-buttons">
+          <a href="/#contact" class="btn-primary">Start Your Project</a>
+          <a href="/#portfolio" class="btn-secondary">View Our Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

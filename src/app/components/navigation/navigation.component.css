@@ -1,0 +1,11 @@
+/* Navigation component specific styles */
+/* Note: Most navigation styles are in main.css, this file is for component-specific overrides */
+
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-menu.active {
+  display: flex;
+}
