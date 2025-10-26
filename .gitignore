@@ -99,6 +99,10 @@ Thumbs.db
 *.swp
 *.swo
 
+# Angular cache and build files
+.angular/
+.angular/cache/
+
 # Local environment files
 .env.local
 .env.development.local
